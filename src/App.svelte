@@ -3,7 +3,9 @@
 	import { routes } from "../.routify/routes";
 </script>
 
-<style  global>
+<style global>
+	@import "../assets/fonts/Jost.css";
+	@import "../assets/fonts/EBGaramond.css";
 	@import "../assets/global.css";
 </style>
 
