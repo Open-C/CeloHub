@@ -1,0 +1,76 @@
+<script lang="ts">
+	import type { Project } from '../data/projects'
+
+	const icons = {
+		github: '/images/link-icons/GitHub-Logo-Round.png',
+		android: '/images/link-icons/Android-Logo-Round@3x.png',
+		iOS: '/images/link-icons/Apple-Logo-Round@3x.png',
+		mpesa: '/images/link-icons/MPesa-Logo-Round@3x.png',
+		mtn: '/images/link-icons/MTN-Logo-Round@3x.png',
+		website: '/images/link-icons/Web-Logo-Round@3x.png'
+	}
+
+	export let project: Project
+
+	// Display options
+	export let showTags = false
+
+	import Tags from './Tags.svelte'
+</script>
+
+<style>
+	.project {
+		padding: 1.5em;
+		justify-items: center;
+		align-content: space-between;
+	}
+
+	.logo {
+		width: auto;
+		height: 3em;
+	}
+
+	footer {
+		display: grid;
+		justify-content: space-between;
+	}
+	.project-links {
+		display: grid;
+		grid-auto-flow: column;
+		justify-content: center;
+	}
+	.project-links img {
+		width: 2em;
+	}
+</style>
+
+<article class="project card">
+	{#if project.logo}
+		<img class="logo" src={project.logo} alt="{project.name} Logo" />
+	{/if}
+	{#if project.thumbnail}
+		<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" />
+	{/if}
+	{#if !project.logo && !project.thumbnail}
+		<h3>{project.name}</h3>
+	{/if}
+	<footer>
+		<div class="project-links">
+			{#if project.github}
+				<a href={project.github}><img src={icons.github} alt="Github" /></a>
+			{/if}
+			{#if project.android}
+				<a href={project.android}><img src={icons.android} alt="Android Play Store" /></a>
+			{/if}
+			{#if project.iOS}
+				<a href={project.iOS}><img src={icons.iOS} alt="iOS App Store" /></a>
+			{/if}
+			{#if project.website}
+				<a href={project.website}><img src={icons.website} alt="Website" /></a>
+			{/if}
+		</div>
+		{#if showTags}
+			<Tags tags={project.tags} />
+		{/if}
+	</footer>
+</article>

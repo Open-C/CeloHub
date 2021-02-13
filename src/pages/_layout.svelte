@@ -31,6 +31,7 @@
 		grid-auto-flow: column;
 		gap: 0.5em;
 		align-items: baseline;
+		color: inherit;
 	}
 	#logo h1 {
 		font-size: 1.75em;
@@ -56,7 +57,17 @@
 	}
 
 	nav ul {
+		display: grid;
+		gap: 1em;
 		list-style-type: none;
+	}
+	nav ul ul {
+		gap: 0;
+		padding-left: 1em;
+	}
+	nav a {
+		display: block;
+		padding: 0.3em 0;
 	}
 
 	.main-column {
@@ -87,9 +98,18 @@
 	<aside>
 		<nav>
 			<ul>
-				{#each $layout.children as { path, title }}
-					<li class:active={$isActive(path)}>
-						<a href={$url(path)}>{title}</a>
+				{#each console.log($layout.children) || $layout.children as { path, title, children }}
+					<li>
+						<a class:active={$isActive(path)} href={$url(path)}>{title}</a>
+						{#if children}
+							<ul>
+								{#each console.log(children) || children as { path, title }}
+									<li class:active={$isActive(path)}>
+										<a href={$url(path)}>{title}</a>
+									</li>
+								{/each}
+							</ul>
+						{/if}
 					</li>
 				{/each}
 			</ul>
@@ -98,11 +118,11 @@
 	</aside>
 	<div class="main-column">
 		<header>
-			<div id="logo">
+			<a href={$url('/')} id="logo">
 				<h1>CeloHub</h1>
 				<span class="divider">|</span>
 				<span class="tagline">To Prosperity & Beyond</span>
-			</div>
+			</a>
 			<div>
 				<input type="search" placeholder="Search CeloHub" />
 			</div>

@@ -128,3 +128,9 @@ button:focus {
 .card:hover {
 	--depth: 15px;
 }
+
+
+img {
+	max-width: 100%;
+	object-fit: contain;
+}
