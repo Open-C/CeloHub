@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 import { copySync, removeSync } from 'fs-extra'
 import { spassr } from 'spassr'
 import getConfig from '@roxi/routify/lib/utils/config'
@@ -39,7 +40,7 @@ const copyToDist = () => ({ writeBundle() { copySync(assetsDir, distDir) } })
 
 export default {
     preserveEntrySignatures: false,
-    input: [`src/main.js`],
+    input: ['src/main.ts'],
     output: {
         sourcemap: true,
         format: 'esm',
@@ -67,6 +68,10 @@ export default {
             dedupe: importee => !!importee.match(/svelte(\/|$)/)
         }),
         commonjs(),
+		typescript({
+			sourceMap: !production,
+			inlineSources: !production
+		}),
 
         production && terser(),
         !production && !isNollup && serve(),
