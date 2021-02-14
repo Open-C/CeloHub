@@ -45,7 +45,7 @@
 </style>
 
 <article class="project card">
-	{#if project.logo}
+	{#if project.logo && !project.thumbnail}
 		<img class="logo" src={project.logo} alt="{project.name} Logo" />
 	{/if}
 	{#if project.thumbnail}
