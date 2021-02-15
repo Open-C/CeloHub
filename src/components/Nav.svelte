@@ -1,6 +1,10 @@
 <script>
 	import { isActive, url, layout } from '@roxi/routify'
 
+	function capitalize(str){
+		return str[0].toUpperCase() + str.slice(1)
+	}
+
 	import { fade } from 'svelte/transition'
 </script>
 
@@ -34,7 +38,13 @@
 		pointer-events: none;
 	}
 
+	.row {
+		display: flex;
+	}
+
 	a {
+		flex: 1;
+
 		display: block;
 		padding-block: calc(0.75em - var(--level) * 0.25em);
 		padding-inline-start: calc(var(--space-outer) + var(--level) * 1em);
@@ -50,16 +60,11 @@
 		justify-content: center;
 		align-items: center;
 		/* margin-inline-end: var(--space-outer); */
+		width: 2.5em;
 		transition: 0.1s;
 	}
 	li:focus .nav-dropdown, li:focus-within .nav-dropdown {
 		transform: rotate(90deg);
-	}
-
-	.row {
-		display: grid;
-		grid-template-columns: 1fr 2.5em;
-		justify-content: space-between;
 	}
 </style>
 
@@ -68,17 +73,19 @@
 		{#each console.log($layout.children) || $layout.children as { path, title, children }}
 			<li tabindex="0">
 				<div class="row">
-					<a class:active={$isActive(path)} href={$url(path)}>{title}</a>
+					<a class:active={$isActive(path)} href={$url(path)}>{capitalize(title)}</a>
 					{#if children?.length}
 						<span class="nav-dropdown">▶</span>
 					{/if}
 				</div>
 				{#if children?.length}
 					<ul transition:fade={{}}>
-						{#each console.log(children) || children as { path, title }}
-							<li class:active={$isActive(path)}>
-								<a href={$url(path)}>{title}</a>
-							</li>
+						{#each children as { path, title }}
+							{#if !path.endsWith('index')}
+								<li class:active={$isActive(path)}>
+									<a href={$url(path)}>{capitalize(title)}</a>
+								</li>
+							{/if}
 						{/each}
 					</ul>
 				{/if}
