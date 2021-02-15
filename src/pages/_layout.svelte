@@ -3,6 +3,8 @@
 <script>
 	import { isActive, url, layout } from '@roxi/routify'
 	import { TabsTransition } from '@roxi/routify/decorators'
+
+	import Nav from '../components/Nav.svelte'
 </script>
 
 <style>
@@ -63,20 +65,6 @@
 		align-content: space-between;
 	}
 
-	nav ul {
-		display: grid;
-		gap: 1em;
-		list-style-type: none;
-	}
-	nav ul ul {
-		gap: 0;
-		padding-left: 1em;
-	}
-	nav a {
-		display: block;
-		padding: 0.3em 0;
-	}
-
 	.main-column {
 		display: flex;
 		flex-direction: column;
@@ -103,24 +91,7 @@
 
 <div id="container">
 	<aside>
-		<nav>
-			<ul>
-				{#each console.log($layout.children) || $layout.children as { path, title, children }}
-					<li>
-						<a class:active={$isActive(path)} href={$url(path)}>{title}</a>
-						{#if children}
-							<ul>
-								{#each console.log(children) || children as { path, title }}
-									<li class:active={$isActive(path)}>
-										<a href={$url(path)}>{title}</a>
-									</li>
-								{/each}
-							</ul>
-						{/if}
-					</li>
-				{/each}
-			</ul>
-		</nav>
+		<Nav />
 		<button>Submit a Project</button>
 	</aside>
 	<div class="main-column">
