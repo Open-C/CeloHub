@@ -26,11 +26,13 @@
 	--celo-faint-gray: #F8F9F9;
 	--celo-faint-gold: #FEF2D6;
 
+
 	--body-font: Jost, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	--heading-font: EB Garamond, eb-garamond, Garamond, var(--body-font);
 
+	--background-color: var(--celo-light-gray);
 
-	background-color: var(--celo-light-gray);
+	background-color: var(--background-color);
 	color: var(--celo-dark);
 
 	font-family: var(--body-font);

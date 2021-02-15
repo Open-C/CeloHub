@@ -17,13 +17,20 @@
 	header {
 		position: sticky;
 		top: 0;
-
 		backdrop-filter: blur(20px);
 
 		display: grid;
 		justify-content: space-between;
 		grid-auto-flow: column;
 		padding: var(--space-outer);
+	}
+	header:before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background-color: var(--background-color);
+		opacity: 0.85;
 	}
 
 	#logo {
