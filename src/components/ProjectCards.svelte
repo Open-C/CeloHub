@@ -9,12 +9,14 @@
 	let filteredProjects: Project[]
 	$: if(projects){
 		const query = searchQuery.trim().toLowerCase()
-		if(query || filterByCategory)
+		if(query || filterByCategory || filterByTags?.length)
 			filteredProjects = projects.filter(project => Boolean(
 				// Search query
 				(!query || project.name.toLowerCase().includes(query) || project.description.toLowerCase().includes(query)) &&
 				// Category filter
-				(!filterByCategory || project.category === filterByCategory)
+				(!filterByCategory || project.category === filterByCategory) &&
+				// Tags filter
+				(!filterByTags?.length || project.tags.some(tag => filterByTags.includes(tag)))
 			))
 		else
 			filteredProjects = projects
