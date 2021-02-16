@@ -13,7 +13,7 @@
 		margin: 0 calc(-1 * var(--space-outer));
 		gap: 0;
 
-		overflow-y: auto;
+		overflow: hidden auto;
 	}
 
 	ul {
@@ -86,7 +86,7 @@
 				<div class="row">
 					<a class:active={$isActive(path)} href={$url(path)}>{capitalize(title)}</a>
 					{#if children?.length}
-						<span class="nav-dropdown">▶</span>
+						<span class="nav-dropdown">›</span>
 					{/if}
 				</div>
 				{#if children?.length}

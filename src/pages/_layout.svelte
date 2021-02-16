@@ -70,7 +70,8 @@
 		top: 0;
 
 		display: grid;
-		align-content: space-between;
+		grid-template-rows: minmax(0, 1fr) auto;
+		/* align-content: space-between; */
 
 		transition: 0.15s;
 	}
