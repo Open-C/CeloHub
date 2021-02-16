@@ -10,6 +10,7 @@ import { spassr } from 'spassr'
 import getConfig from '@roxi/routify/lib/utils/config'
 import autoPreprocess from 'svelte-preprocess'
 import postcssImport from 'postcss-import'
+import autoprefixer from 'autoprefixer'
 import { injectManifest } from 'rollup-plugin-workbox'
 
 
@@ -50,13 +51,18 @@ export default {
     },
     plugins: [
         svelte({
-            dev: !production, // run-time checks      
+            dev: !production, // run-time checks
             // Extract component CSS — better performance
             css: css => css.write(`bundle.css`),
             hot: isNollup,
             preprocess: [
                 autoPreprocess({
-                    postcss: { plugins: [postcssImport()] },
+                    postcss: {
+						plugins: [
+							postcssImport(),
+							autoprefixer()
+						]
+					},
                     defaults: { style: 'postcss' }
                 })
             ]

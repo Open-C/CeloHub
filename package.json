@@ -30,6 +30,7 @@
       "@rollup/plugin-typescript": "^6.0.0",
       "@roxi/routify": "^2.8.5",
       "@tsconfig/svelte": "^1.0.0",
+      "autoprefixer": "^10.2.4",
       "cross-env": "^7.0.2",
       "fs-extra": "^9.0.1",
       "nollup": "^0.13.13",
