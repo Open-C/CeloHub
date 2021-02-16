@@ -26,16 +26,14 @@
 	// View options
 	export let showTags = false
 
+	import Breadcrumb from './Breadcrumb.svelte'
 	import ProjectCard from './ProjectCard.svelte'
 </script>
 
-<style>
-	.full {
-		grid-column: 1 / -1;
-	}
-</style>
-
-<div class="full">
+<div class="full bar">
+	<slot>
+		<h3><Breadcrumb /></h3>
+	</slot>
 	<label>
 		<input type="checkbox" bind:checked={showTags} />
 		<span>Show Tags</span>
