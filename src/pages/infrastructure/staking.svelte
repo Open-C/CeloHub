@@ -1,8 +1,8 @@
 <!-- routify:options index=0 -->
-<!-- routify:options title="Wallets" -->
+<!-- routify:options title="Staking" -->
 
 <script lang="ts">
 	import ProjectCards from '../../components/ProjectCards.svelte'
 </script>
 
-<ProjectCards filterByCategory="Wallets" />
+<ProjectCards filterByCategory="Staking" />
