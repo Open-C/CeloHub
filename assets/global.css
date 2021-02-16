@@ -84,7 +84,7 @@ input, button, textarea {
 	box-shadow: 0 1px var(--depth) rgba(var(--celo-dark), 0.5);
 	border: none;
 	border-radius: 0.75em;
-	padding: 1em 1.5em;
+	padding: 0.75em 1.5em;
 }
 select {
 	background: none;

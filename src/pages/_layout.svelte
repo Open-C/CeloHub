@@ -12,6 +12,8 @@
 <style>
 	#container {
 		--sidebar-width: 14em;
+		--sidebar-button-width: 3em;
+
 		--space-outer: 2em;
 		--space-inner: 2em;
 
@@ -26,6 +28,7 @@
 
 		display: grid;
 		justify-content: space-between;
+		align-items: center;
 		grid-auto-flow: column;
 		padding: var(--space-outer);
 	}
@@ -104,6 +107,12 @@
 		#container {
 			display: grid;
 			grid-template-columns: 0 minmax(0, 1fr);
+			--space-outer: 1.5em;
+			--space-inner: 1.5em;
+		}
+
+		.no-mobile {
+			display: none;
 		}
 
 		.sidebar {
@@ -117,14 +126,16 @@
 		.sidebar.is-open, .sidebar:focus-within {
 			transform: translateX(0);
 		}
-
-		/* Hamburger Icon */
 		.sidebar-button {
 			content: '☰';
 
-			display: block;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: var(--sidebar-button-width);
+			height: 3em;
+
 			background: inherit;
-			padding: 1em;
 			border-top-right-radius: 0.25em;
 			border-bottom-right-radius: 0.25em;
 
@@ -162,6 +173,10 @@
 		.sidebar:focus-within ~ .sidebar-backdrop:before {
 			opacity: 0.5;
 		}
+
+		#logo {
+			margin-left: var(--sidebar-button-width);
+		}
 	}
 </style>
 
@@ -177,8 +192,8 @@
 		<header>
 			<a href={$url('/')} id="logo">
 				<h1>CeloHub</h1>
-				<span class="divider">|</span>
-				<span class="tagline">To Prosperity & Beyond</span>
+				<span class="divider no-mobile">|</span>
+				<span class="tagline no-mobile">To Prosperity & Beyond</span>
 			</a>
 			<div>
 				<input type="search" placeholder="Search CeloHub" />
