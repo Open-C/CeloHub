@@ -12,6 +12,8 @@
 	nav {
 		margin: 0 calc(-1 * var(--space-outer));
 		gap: 0;
+
+		overflow-y: auto;
 	}
 
 	ul {

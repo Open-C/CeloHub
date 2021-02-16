@@ -9,11 +9,12 @@
 
 <style>
 	#container {
-		display: grid;
-		grid-template-columns: 14em 1fr;
-
+		--sidebar-width: 14em;
 		--space-outer: 2em;
 		--space-inner: 2em;
+
+		display: grid;
+		grid-template-columns: var(--sidebar-width) 1fr;
 	}
 
 	header {
@@ -58,6 +59,7 @@
 
 		padding: 2em;
 		gap: 2em;
+		width: var(--sidebar-width);
 		height: 100vh;
 		position: sticky;
 		top: 0;
@@ -65,7 +67,7 @@
 		display: grid;
 		align-content: space-between;
 
-		overflow: auto;
+		transition: 0.3s;
 	}
 
 	.main-column {
@@ -80,6 +82,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
 		gap: var(--space-inner);
+		align-content: start;
 	}
 
 	footer {
@@ -90,10 +93,44 @@
 		background-color: var(--celo-dark);
 		color: var(--celo-light-gray);
 	}
+
+
+	@media (max-width: 40rem) {
+		#container {
+			display: grid;
+			grid-template-columns: 0 1fr;
+		}
+
+		aside {
+			position: sticky;
+			top: 0;
+			z-index: 1;
+			outline: none;
+		}
+		/* Hamburger Icon */
+		aside::before {
+			content: '☰';
+
+			background: inherit;
+			padding: 1em;
+			border-top-right-radius: 0.25em;
+			border-bottom-right-radius: 0.25em;
+
+			position: absolute;
+			left: calc(100% + var(--space-inner));
+			left: 100%;
+			top: var(--space-inner);
+
+			cursor: pointer;
+		}
+		aside:not(:focus):not(:focus-within) {
+			transform: translateX(-100%);
+		}
+	}
 </style>
 
 <div id="container">
-	<aside>
+	<aside tabindex="0">
 		<Nav />
 		<button>Submit a Project</button>
 	</aside>
