@@ -32,10 +32,12 @@
 		background-color: rgba(0, 0, 0, 0.25);
 	}
 
-	ul li:not(:focus):not(:focus-within) ul {
-		position: absolute;
-		visibility: hidden;
-		pointer-events: none;
+	@media (max-height: 40rem) {
+		ul li:not(:focus):not(:focus-within) ul {
+			position: absolute;
+			visibility: hidden;
+			pointer-events: none;
+		}
 	}
 
 	.row {
@@ -66,6 +68,12 @@
 	}
 	li:focus .nav-dropdown, li:focus-within .nav-dropdown {
 		transform: rotate(90deg);
+	}
+
+	@media (min-height: 40rem) {
+		.nav-dropdown {
+			display: none;
+		}
 	}
 </style>
 
