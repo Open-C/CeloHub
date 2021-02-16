@@ -27,7 +27,7 @@
 		grid-column-end: span 2;
 	}
 
-	.stats {
+	#ecosystem-stats {
 		display: block;
 		columns: 4;
 		column-rule: 1px solid var(--celo-gray);
@@ -69,7 +69,7 @@
 	</CardStack>
 </div>
 
-<div class="card full stats">
+<div id="ecosystem-stats" class="card static full">
 	<p>
 		<Number number={stats.totalTransactions} />
 		<span>Total transactions</span>
