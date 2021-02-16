@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Project, Tag, projects } from '../data/projects'
 
+	export let filterByCategorySection: Tag | undefined
 	export let filterByCategory: Tag | undefined
 	export let filterByTags: Tag[]
 
@@ -9,10 +10,12 @@
 	let filteredProjects: Project[]
 	$: if(projects){
 		const query = searchQuery.trim().toLowerCase()
-		if(query || filterByCategory || filterByTags?.length)
+		if(query || filterByCategorySection || filterByCategory || filterByTags?.length)
 			filteredProjects = projects.filter(project => Boolean(
 				// Search query
 				(!query || project.name.toLowerCase().includes(query) || project.description.toLowerCase().includes(query)) &&
+				// Category section filter
+				(!filterByCategorySection || project.section === filterByCategorySection) &&
 				// Category filter
 				(!filterByCategory || project.category === filterByCategory) &&
 				// Tags filter

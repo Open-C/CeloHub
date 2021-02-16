@@ -6,4 +6,4 @@
 	import ProjectCards from '../../components/ProjectCards.svelte'
 </script>
 
-<ProjectCards />
+<ProjectCards filterByCategorySection="Apps" />
