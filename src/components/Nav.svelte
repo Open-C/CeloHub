@@ -53,6 +53,7 @@
 	}
 	a.active {
 		background-color: var(--celo-dark);
+		font-weight: 900;
 	}
 
 	.nav-dropdown {
