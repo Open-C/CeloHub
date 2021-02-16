@@ -6,7 +6,7 @@
 	}
 
 	function capitalize(str){
-		return str[0].toUpperCase() + str.slice(1)
+		return str.split(' ').map(str => str[0].toUpperCase() + str.slice(1)).join(' ')
 	}
 
 	$: fragments = getFragments($page)

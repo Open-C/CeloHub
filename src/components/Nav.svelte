@@ -2,7 +2,7 @@
 	import { isActive, url, layout } from '@roxi/routify'
 
 	function capitalize(str){
-		return str[0].toUpperCase() + str.slice(1)
+		return str.split(' ').map(str => str[0].toUpperCase() + str.slice(1)).join(' ')
 	}
 
 	import { fade } from 'svelte/transition'
@@ -82,11 +82,9 @@
 				{#if children?.length}
 					<ul transition:fade={{}}>
 						{#each children as { path, title }}
-							{#if !path.endsWith('index')}
-								<li class:active={$isActive(path)}>
-									<a href={$url(path)}>{capitalize(title)}</a>
-								</li>
-							{/if}
+							<li class:active={$isActive(path)}>
+								<a href={$url(path)}>{capitalize(title)}</a>
+							</li>
 						{/each}
 					</ul>
 				{/if}
