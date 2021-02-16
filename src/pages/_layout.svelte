@@ -10,7 +10,7 @@
 <style>
 	#container {
 		display: grid;
-		grid-template-columns: 16em 1fr;
+		grid-template-columns: 14em 1fr;
 
 		--space-outer: 2em;
 		--space-inner: 2em;
@@ -57,12 +57,15 @@
 		color: var(--celo-light-gray);
 
 		padding: 2em;
+		gap: 2em;
 		height: 100vh;
 		position: sticky;
 		top: 0;
 
 		display: grid;
 		align-content: space-between;
+
+		overflow: auto;
 	}
 
 	.main-column {
