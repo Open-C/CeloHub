@@ -4,6 +4,8 @@
 	import { isActive, url, layout } from '@roxi/routify'
 	import { TabsTransition } from '@roxi/routify/decorators'
 
+	let sidebarIsOpen = false
+
 	import Nav from '../components/Nav.svelte'
 </script>
 
@@ -53,7 +55,7 @@
 		font-size: 1.3em;
 	}
 
-	aside {
+	.sidebar {
 		background-color: var(--celo-dark);
 		color: var(--celo-light-gray);
 
@@ -67,7 +69,10 @@
 		display: grid;
 		align-content: space-between;
 
-		transition: 0.3s;
+		transition: 0.15s;
+	}
+	.sidebar-button, .sidebar-backdrop {
+		display: none;
 	}
 
 	.main-column {
@@ -101,16 +106,23 @@
 			grid-template-columns: 0 1fr;
 		}
 
-		aside {
+		.sidebar {
 			position: sticky;
 			top: 0;
-			z-index: 1;
+			z-index: 2;
 			outline: none;
+			will-change: transform;
+			transform: translateX(-100%);
 		}
+		.sidebar.is-open, .sidebar:focus-within {
+			transform: translateX(0);
+		}
+
 		/* Hamburger Icon */
-		aside::before {
+		.sidebar-button {
 			content: '☰';
 
+			display: block;
 			background: inherit;
 			padding: 1em;
 			border-top-right-radius: 0.25em;
@@ -123,17 +135,44 @@
 
 			cursor: pointer;
 		}
-		aside:not(:focus):not(:focus-within) {
-			transform: translateX(-100%);
+		.sidebar-backdrop, .sidebar-backdrop:before {
+			display: block;
+			position: fixed;
+			inset: 0;
+
+			transition: 0.3s;
+
+			z-index: 1;
+			pointer-events: none;
+		}
+		.sidebar-backdrop:before {
+			content: '';
+			position: fixed;
+			inset: 0;
+
+			background-color: var(--celo-gold);
+			opacity: 0;
+		}
+		.sidebar.is-open ~ .sidebar-backdrop,
+		.sidebar:focus-within ~ .sidebar-backdrop {
+			backdrop-filter: blur(2px);
+			pointer-events: initial;
+		}
+		.sidebar.is-open ~ .sidebar-backdrop:before,
+		.sidebar:focus-within ~ .sidebar-backdrop:before {
+			opacity: 0.5;
 		}
 	}
 </style>
 
 <div id="container">
-	<aside tabindex="0">
+	<aside class="sidebar" class:is-open={sidebarIsOpen}>
 		<Nav />
 		<button>Submit a Project</button>
+		<span class="sidebar-button" on:click={() => sidebarIsOpen = !sidebarIsOpen}>☰</span>
 	</aside>
+	<span class="sidebar-backdrop" on:click={() => sidebarIsOpen = !sidebarIsOpen}></span>
+
 	<div class="main-column">
 		<header>
 			<a href={$url('/')} id="logo">
