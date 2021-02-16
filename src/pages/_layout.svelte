@@ -16,7 +16,7 @@
 		--space-inner: 2em;
 
 		display: grid;
-		grid-template-columns: var(--sidebar-width) 1fr;
+		grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
 	}
 
 	header {
@@ -103,7 +103,7 @@
 	@media (max-width: 40rem) {
 		#container {
 			display: grid;
-			grid-template-columns: 0 1fr;
+			grid-template-columns: 0 minmax(0, 1fr);
 		}
 
 		.sidebar {
