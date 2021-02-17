@@ -228,6 +228,7 @@
 	@media (max-width: 30rem) {
 		#container {
 			--space-outer: 1.25em;
+			font-size: 0.8em;
 		}
 
 		#logo {
@@ -239,10 +240,6 @@
 			display: none;
 		}
 		#logo .tagline {
-			font-size: 0.8em;
-		}
-
-		main {
 			font-size: 0.8em;
 		}
 	}
