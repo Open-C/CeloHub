@@ -6,7 +6,7 @@
 	}
 
 	function capitalize(str){
-		return str.split(' ').map(str => str[0].toUpperCase() + str.slice(1)).join(' ')
+		return str ? str.split(' ').map(str => str[0].toUpperCase() + str.slice(1)).join(' ') : ''
 	}
 
 	$: currentPage = $page.path.endsWith('index') ? $page.parent : $page
