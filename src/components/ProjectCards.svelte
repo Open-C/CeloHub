@@ -27,7 +27,7 @@
 
 
 	// View options
-	export let showTags = false
+	export let showTags = true
 
 	import Breadcrumb from './Breadcrumb.svelte'
 	import ProjectCard from './ProjectCard.svelte'
