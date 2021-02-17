@@ -89,14 +89,24 @@
 		padding: var(--space-outer);
 
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+		grid-template-columns: repeat(auto-fit, [col] minmax(calc(16em + 0.2vw), 1fr));
 		gap: var(--space-inner);
 		align-content: start;
+	}
+	@media (max-width: 38rem) {
+		/* main {
+			grid-template-columns: minmax(0, 1fr);
+			grid-auto-flow: row;
+		} */
+		main > * {
+			grid-column: 1 / -1;
+		}
 	}
 
 	footer {
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 		padding: var(--space-outer);
 
 		background-color: var(--celo-dark);
@@ -104,7 +114,7 @@
 	}
 
 
-	@media (max-width: 40rem) {
+	@media (max-width: 57rem) {
 		#container {
 			display: grid;
 			grid-template-columns: 0 minmax(0, 1fr);
@@ -123,6 +133,8 @@
 			outline: none;
 			will-change: transform;
 			transform: translateX(-100%);
+
+			opacity: 0.97;
 		}
 		.sidebar.is-open, .sidebar:focus-within {
 			transform: translateX(0);

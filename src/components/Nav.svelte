@@ -34,14 +34,6 @@
 		background-color: rgba(0, 0, 0, 0.25);
 	}
 
-	@media (max-height: 40rem) {
-		ul li:not(:focus):not(:focus-within) ul {
-			position: absolute;
-			visibility: hidden;
-			pointer-events: none;
-		}
-	}
-
 	.row {
 		display: flex;
 	}
@@ -50,9 +42,13 @@
 		flex: 1;
 
 		display: block;
-		padding-block: calc(0.75em - var(--level) * 0.25em);
+		/* padding-block: calc(0.75em - var(--level) * 0.25em);
 		padding-inline-start: calc(var(--space-outer) + var(--level) * 1em);
-		padding-inline-end: var(--space-outer);
+		padding-inline-end: var(--space-outer); */
+		padding-top: calc(0.75em - var(--level) * 0.25em);
+		padding-bottom: calc(0.75em - var(--level) * 0.25em);
+		padding-left: calc(var(--space-outer) + var(--level) * 1em);
+		padding-right: var(--space-outer);
 		font-weight: calc(700 - var(--level) * 300);
 	}
 	a.active {
@@ -72,7 +68,15 @@
 		transform: rotate(90deg);
 	}
 
-	@media (min-height: 40rem) {
+
+	@media (max-height: 30rem) {
+		ul li:not(:focus):not(:focus-within) ul {
+			position: absolute;
+			visibility: hidden;
+			pointer-events: none;
+		}
+	}
+	@media (min-height: 30rem) {
 		.nav-dropdown {
 			display: none;
 		}
@@ -86,7 +90,7 @@
 				<div class="row">
 					<a class:active={$isActive(path)} href={$url(path)}>{capitalize(title)}</a>
 					{#if children?.length}
-						<span class="nav-dropdown">›</span>
+						<span class="nav-dropdown">▶</span><!-- ⟩ -->
 					{/if}
 				</div>
 				{#if children?.length}

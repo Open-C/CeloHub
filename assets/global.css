@@ -37,6 +37,8 @@
 
 	font-family: var(--body-font);
 	font-size: 16px;
+
+	overflow: hidden auto;
 }
 
 html, body {
@@ -70,9 +72,13 @@ h5 {
 a {
 	color: var(--celo-green);
 	text-decoration: none;
+	transition: 0.3s ;
 }
 a:hover {
 	text-decoration: underline;
+}
+a:hover img {
+	filter: brightness(1.5);
 }
 
 label {
