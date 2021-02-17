@@ -1,10 +1,17 @@
 <!-- routify:options preload="proximity" -->
 
 <script>
-	import { isActive, url, layout } from '@roxi/routify'
+	import { beforeUrlChange, isActive, url, layout } from '@roxi/routify'
 	import { TabsTransition } from '@roxi/routify/decorators'
 
 	let sidebarIsOpen = false
+
+	$beforeUrlChange((event, store) => {
+		sidebarIsOpen = false
+		// Lose focus
+		document.activeElement.blur()
+		return true
+	})
 
 	import Nav from '../components/Nav.svelte'
 </script>
