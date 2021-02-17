@@ -181,7 +181,8 @@
 			position: fixed;
 			inset: 0;
 
-			background-color: var(--celo-gold);
+			/* background-color: var(--celo-gold); */
+			background-color: var(--celo-dark);
 			opacity: 0;
 		}
 		.sidebar.is-open ~ .sidebar-backdrop,
