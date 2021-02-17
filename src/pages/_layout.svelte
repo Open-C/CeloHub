@@ -15,7 +15,7 @@
 		--sidebar-button-width: 3em;
 
 		--space-outer: 2em;
-		--space-inner: 2em;
+		--space-inner: 1.75em;
 
 		display: grid;
 		grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
@@ -29,6 +29,7 @@
 		display: grid;
 		justify-content: space-between;
 		align-items: center;
+		justify-items: center;
 		grid-auto-flow: column;
 		padding: var(--space-outer);
 	}
@@ -45,18 +46,24 @@
 		display: grid;
 		grid-auto-flow: column;
 		gap: 0.5em;
-		align-items: baseline;
+		align-items: center;
 		color: inherit;
 	}
 	#logo h1 {
 		font-size: 1.75em;
 	}
 	#logo .divider {
-		font-size: 2em;
+		font-size: 1.75em;
 	}
 	#logo .tagline {
 		font-size: 1.3em;
 	}
+
+
+	input[type="search"] {
+		min-width: 14em;
+	}
+
 
 	.sidebar {
 		background-color: var(--celo-dark);
@@ -119,11 +126,7 @@
 			display: grid;
 			grid-template-columns: 0 minmax(0, 1fr);
 			--space-outer: 1.5em;
-			--space-inner: 1.5em;
-		}
-
-		.no-mobile {
-			display: none;
+			--space-inner: 1.25em;
 		}
 
 		.sidebar {
@@ -191,6 +194,36 @@
 			margin-left: var(--sidebar-button-width);
 		}
 	}
+
+	/* Move search field */
+	@media (max-width: 45rem) {
+		header {
+			grid-template-columns: 1fr 0;
+		}
+		.search-container {
+			justify-self: end;
+		}
+		input[type="search"] {
+			/* position: absolute;
+			right: 0; */
+			transition: transform 0.3s;
+			min-width: 50vw;
+			padding-left: 1em;
+		}
+		input[type="search"]:not(:focus) {
+			transform: translateX(calc(100% - var(--sidebar-button-width) + var(--space-outer)));
+		}
+
+		#logo {
+			margin-left: 0;
+		}
+	}
+
+	@media (max-width: 30rem) {
+		.no-mobile {
+			display: none;
+		}
+	}
 </style>
 
 <div id="container">
@@ -208,8 +241,8 @@
 				<span class="divider no-mobile">|</span>
 				<span class="tagline no-mobile">To Prosperity & Beyond</span>
 			</a>
-			<div>
-				<input type="search" placeholder="Search CeloHub" />
+			<div class="search-container">
+				<input type="search" placeholder="🔍 Search CeloHub..." />
 			</div>
 		</header>
 
