@@ -277,7 +277,7 @@
 
 		<footer>
 			<span>Made with <img alt="love" src="/images/branding/heart.png" width="20" style="vertical-align: -0.15em"> by OpenC</span>
-			<a href="https://github.com" targt="_blank">GitHub</a>
+			<a href="https://github.com/Open-C/celohub" target="_blank">GitHub</a>
 			<!-- <span style="overflow: hidden; text-overflow: ellipsis">Donate: 0x0000000000000000000000000000000000000000</span> -->
 		</footer>
 	</div>
