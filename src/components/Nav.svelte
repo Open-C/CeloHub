@@ -56,8 +56,9 @@
 	a.active {
 		background-color: rgba(0, 0, 0, 0.25);
 		color: var(--celo-gold);
-		font-weight: 800;
+		font-weight: 700;
 		text-decoration: underline;
+		text-shadow: 0 0 1px;
 	}
 
 	.nav-dropdown {
