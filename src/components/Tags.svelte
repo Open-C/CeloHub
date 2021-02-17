@@ -25,17 +25,25 @@
 
 <style>
 	.tags {
-		font-size: 0.8em;
-		gap: 0.5em;
+		--space-inner: 0.5em;
+
+		/* gap: var(--space-inner); */
+		gap: 0;
+		margin: calc(-0.5 * var(--space-inner));
+
 		display: flex;
 		align-items: center;
 		overflow-x: auto;
 		position: relative;
+
+		font-size: 0.8em;
 	}
 	.tags:not(.show-first-few) {
 		flex-wrap: wrap;
 	}
 	.tag {
+		margin: calc(0.5 * var(--space-inner));
+
 		background-color: var(--tag-color, var(--celo-gray));
 		background-image: linear-gradient(#ffffff99, #ffffff99);
 		border-radius: 0.5em;
@@ -47,9 +55,18 @@
 
 	.other-count {
 		background-color: var(--celo-gray);
-		border-radius: 0.5em;
-		padding: 0.3em 0.75em;
+		position: sticky;
+		right: 0;
+
+		box-shadow: 0 0 calc(0.6 * var(--space-inner)) calc(0.6 * var(--space-inner)) white;
 	}
+	/* .other-count:before {
+		content: '';
+		position: absolute;
+		left: calc(-1 * var(--space-inner)); right: 0; top: 0; bottom: 0;
+		background: linear-gradient(to left, white, transparent);
+		z-index: -1;
+	} */
 </style>
 
 <div class="tags" class:show-first-few={!showAllTags}>
@@ -57,6 +74,6 @@
 		<span class="tag" style="--tag-color: {getTagColor(tag)}">{tag}</span>
 	{/each}
 	{#if tags.length > 3 && !showAllTags}
-		<span class="other-count">+{tags.length - showCount}</span>
+		<span class="tag other-count">+{tags.length - showCount}</span>
 	{/if}
 </div>
