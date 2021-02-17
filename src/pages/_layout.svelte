@@ -136,7 +136,7 @@
 		.sidebar {
 			position: sticky;
 			top: 0;
-			z-index: 2;
+			z-index: 3;
 			outline: none;
 			will-change: transform;
 			transform: translateX(-100%);
@@ -173,7 +173,7 @@
 
 			transition: 0.3s;
 
-			z-index: 1;
+			z-index: 2;
 			pointer-events: none;
 		}
 		.sidebar-backdrop:before {
