@@ -157,6 +157,13 @@ img {
 	object-fit: contain;
 }
 
+hr {
+	background: none;
+	border: none;
+	border-bottom: 1px solid;
+	opacity: 0.15;
+}
+
 
 .full {
 	grid-column: 1 / -1;
