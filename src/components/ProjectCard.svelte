@@ -58,9 +58,6 @@
 	{/if}
 	<footer>
 		<div class="project-links">
-			{#if project.github}
-				<a href={project.github}><img src={icons.github} alt="Github" /></a>
-			{/if}
 			{#if project.android}
 				<a href={project.android}><img src={icons.android} alt="Android Play Store" /></a>
 			{/if}
@@ -69,6 +66,9 @@
 			{/if}
 			{#if project.website}
 				<a href={project.website}><img src={icons.website} alt="Website" /></a>
+			{/if}
+			{#if project.github}
+				<a href={project.github}><img src={icons.github} alt="Github" /></a>
 			{/if}
 		</div>
 		{#if showTags}
