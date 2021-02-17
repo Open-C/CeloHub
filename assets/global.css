@@ -90,13 +90,18 @@ input, button, textarea {
 	background-color: var(--celo-white);
 	box-shadow: 0 1px var(--depth) rgba(var(--celo-dark), 0.5);
 	border: none;
-	border-radius: 0.75em;
-	padding: 0.75em 1.5em;
+	border-radius: 0.5em;
+	padding: 0.75em 1em;
+	appearance: none;
 }
 select {
 	background: none;
 	border: none;
 	cursor: pointer;
+}
+
+input[type="checkbox"] {
+	appearance: auto;
 }
 
 input:disabled {
