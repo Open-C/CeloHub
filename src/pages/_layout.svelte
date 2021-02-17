@@ -34,7 +34,6 @@
 		grid-auto-flow: column;
 
 		padding: var(--space-outer);
-		padding-bottom: calc(var(--space-outer) * 0.5);
 	}
 	header:before {
 		content: '';
@@ -109,7 +108,7 @@
 	main {
 		flex: 1;
 		padding: var(--space-outer);
-		padding-top: calc(var(--space-outer) * 0.5);
+		padding-top: 0;
 
 		display: grid;
 		gap: var(--space-inner);
