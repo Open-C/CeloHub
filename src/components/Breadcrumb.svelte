@@ -1,20 +1,19 @@
 <script lang="ts">
 	import { goto, page, url } from '@roxi/routify'
 
-	function getFragments(page: ClientNodeApi){
-		return (page.parent?.title ? getFragments(page.parent) : []).concat(page)
+	function getAncestors(page: ClientNodeApi){
+		return page.parent?.title ? getAncestors(page.parent).concat(page.parent) : []
 	}
 
 	function capitalize(str){
 		return str.split(' ').map(str => str[0].toUpperCase() + str.slice(1)).join(' ')
 	}
 
-	$: fragments = getFragments($page)
-	$: ancestors = fragments.slice(0, -1)
-	$: childPage = fragments.slice(-1)[0]
-	$: siblings = ancestors.slice(-1)[0]?.children
+	$: currentPage = $page.path.endsWith('index') ? $page.parent : $page
+	$: ancestors = getAncestors(currentPage)
+	$: siblings = currentPage.parent?.children
 
-	$: selectedPath = childPage.path
+	$: selectedPath = currentPage.path
 </script>
 
 <style>
@@ -29,12 +28,12 @@
 		<span>›</span>
 	{/each}
 	{#if siblings?.length}
-		<select bind:value={selectedPath} on:change={e => $goto(e.target.value)}>
+		<select value={selectedPath} on:change={e => $goto(e.target.value)}>
 			{#each siblings as siblingPage}
 				<option value={siblingPage.path}>{capitalize(siblingPage.title)}</option>
 			{/each}
 		</select>
 	{:else}
-		<span>{childPage.title}</span>
+		<span>{capitalize(currentPage.title)}</span>
 	{/if}
 </span>
