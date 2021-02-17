@@ -1,8 +1,8 @@
-<!-- routify:options index=1 -->
-<!-- routify:options title="Data" -->
+<!-- routify:options index=2 -->
+<!-- routify:options title="Core" -->
 
 <script lang="ts">
 	import ProjectCards from '../../components/ProjectCards.svelte'
 </script>
 
-<ProjectCards filterByCategory="Data" />
+<ProjectCards filterByCategory="Core" />
