@@ -11,7 +11,7 @@
 <style>
 	nav {
 		margin: 0 calc(-1 * var(--space-outer));
-		gap: 0;
+		gap: 0.33em;
 
 		overflow: hidden auto;
 	}
@@ -24,6 +24,7 @@
 	ul ul {
 		gap: 0;
 		--level: 1;
+		/* font-size: 0.9em; */
 	}
 
 	li:focus, li:focus-within, a:focus {
@@ -45,8 +46,8 @@
 		/* padding-block: calc(0.75em - var(--level) * 0.25em);
 		padding-inline-start: calc(var(--space-outer) + var(--level) * 1em);
 		padding-inline-end: var(--space-outer); */
-		padding-top: calc(0.75em - var(--level) * 0.25em);
-		padding-bottom: calc(0.75em - var(--level) * 0.25em);
+		padding-top: calc(0.7em - var(--level) * 0.35em);
+		padding-bottom: calc(0.7em - var(--level) * 0.35em);
 		padding-left: calc(var(--space-outer) + var(--level) * 1em);
 		padding-right: var(--space-outer);
 		font-weight: calc(700 - var(--level) * 300);
