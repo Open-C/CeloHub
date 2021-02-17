@@ -44,11 +44,11 @@
 		flex: 1;
 
 		display: block;
-		/* padding-block: calc(0.75em - var(--level) * 0.25em);
+		/* padding-block: calc(0.5em - var(--level) * 0.33em);
 		padding-inline-start: calc(var(--space-outer) + var(--level) * 1em);
 		padding-inline-end: var(--space-outer); */
-		padding-top: calc(0.7em - var(--level) * 0.35em);
-		padding-bottom: calc(0.7em - var(--level) * 0.35em);
+		padding-top: calc(0.5em - var(--level) * 0.33em);
+		padding-bottom: calc(0.5em - var(--level) * 0.33em);
 		padding-left: calc(var(--space-outer) + var(--level) * 1em);
 		padding-right: var(--space-outer);
 		font-weight: calc(700 - var(--level) * 300);
