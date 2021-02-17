@@ -175,11 +175,31 @@ img {
 	justify-content: space-between;
 }
 
+.sticky {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	backdrop-filter: blur(20px);
+}
+.sticky:before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background-color: var(--background-color);
+	opacity: 0.85;
+}
+
 .grid {
+	--column-size: calc(16em + 0.2vw);
+
 	display: grid;
-	grid-template-columns: repeat(auto-fit, [col] minmax(calc(16em + 0.2vw), 1fr));
+	grid-template-columns: repeat(auto-fit, [col] minmax(var(--column-size), 1fr));
 	gap: var(--space-inner);
 	align-content: start;
+}
+.grid.small {
+	--column-size: calc(9em + 0.15vw);
 }
 /* @media (max-width: 38rem) { */
 	/* .grid {

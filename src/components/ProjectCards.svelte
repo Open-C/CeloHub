@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Project, Tag, projects } from '../data/projects'
+	import { Project, Tag, projects as allProjects } from '../data/projects'
 
 	export let filterByCategorySection: Tag | undefined
 	export let filterByCategory: Tag | undefined
@@ -7,11 +7,11 @@
 
 	export let searchQuery = ''
 
-	let filteredProjects: Project[]
-	$: if(projects){
+	let projects: Project[]
+	$: if(allProjects){
 		const query = searchQuery.trim().toLowerCase()
 		if(query || filterByCategorySection || filterByCategory || filterByTags?.length)
-			filteredProjects = projects.filter(project => Boolean(
+			projects = allProjects.filter(project => Boolean(
 				// Search query
 				(!query || project.name.toLowerCase().includes(query) || project.description.toLowerCase().includes(query)) &&
 				// Category section filter
@@ -22,8 +22,12 @@
 				(!filterByTags?.length || project.tags.some(tag => filterByTags.includes(tag)))
 			))
 		else
-			filteredProjects = projects
+			projects = allProjects
 	}
+
+	let liveProjects: Project[], comingSoonProjects: Project[]
+	$: liveProjects = projects?.filter(project => project.isLive) || []
+	$: comingSoonProjects = projects?.filter(project => !project.isLive) || []
 
 
 	// View options
@@ -33,18 +37,48 @@
 	import ProjectCard from './ProjectCard.svelte'
 </script>
 
-<div class="bar">
-	<slot>
-		<h3><Breadcrumb /></h3>
-	</slot>
-	<label>
-		<input type="checkbox" bind:checked={showTags} />
-		<span>Show Tags</span>
-	</label>
-</div>
+<style>
+	section {
+		display: grid;
+	}
+	section header {
+		position: sticky;
+		top: 6em;
+		top: var(--header-height);
+		padding-bottom: calc(0.5 * var(--space-inner));
+		margin-bottom: calc(-0.5 * var(--space-inner));
+	}
+</style>
 
-<div class="grid">
-	{#each filteredProjects as project}
-		<ProjectCard {project} bind:showTags={showTags} />
-	{/each}
-</div>
+<section class="column">
+	<header class="sticky bar">
+		<slot>
+			<h3><Breadcrumb /></h3>
+		</slot>
+		<label>
+			<input type="checkbox" bind:checked={showTags} />
+			<span>Show Tags</span>
+		</label>
+	</header>
+
+	<div class="grid">
+		{#each liveProjects as project}
+			<ProjectCard {project} bind:showTags={showTags} />
+		{:else}
+			We didn't find any projects here.
+		{/each}
+	</div>
+</section>
+{#if comingSoonProjects?.length}
+	<hr>
+	<section>
+		<header class="sticky bar">
+			<h3>Coming Soon</h3>
+		</header>
+		<div class="grid small">
+			{#each comingSoonProjects as project}
+				<ProjectCard {project} bind:showTags={showTags} />
+			{/each}
+		</div>
+	</section>
+{/if}

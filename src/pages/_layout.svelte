@@ -16,17 +16,13 @@
 
 		--space-outer: 2rem;
 		--space-inner: 1.75rem;
+		--header-height: calc(var(--space-outer) * 2 + 2.75em);
 
 		display: grid;
 		grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
 	}
 
 	header {
-		position: sticky;
-		top: 0;
-		z-index: 1;
-		backdrop-filter: blur(20px);
-
 		display: grid;
 		justify-content: space-between;
 		align-items: center;
@@ -34,14 +30,8 @@
 		grid-auto-flow: column;
 
 		padding: var(--space-outer);
-	}
-	header:before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: -1;
-		background-color: var(--background-color);
-		opacity: 0.85;
+
+		height: var(--header-height);
 	}
 
 	#logo {
@@ -260,7 +250,7 @@
 	<span class="sidebar-backdrop" on:click={() => sidebarIsOpen = !sidebarIsOpen}></span>
 
 	<div class="main-column">
-		<header>
+		<header class="sticky">
 			<a href={$url('/')} id="logo">
 				<h1>CeloHub</h1>
 				<span class="divider">
