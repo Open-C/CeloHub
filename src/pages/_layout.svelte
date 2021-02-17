@@ -230,6 +230,9 @@
 	@media (max-width: 30rem) {
 		#container {
 			--space-outer: 1.25rem;
+		}
+
+		.main-column {
 			font-size: 0.8em;
 		}
 
