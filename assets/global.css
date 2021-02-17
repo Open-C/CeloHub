@@ -51,6 +51,7 @@ html, body {
 h1 {
 	font-family: var(--heading-font);
 	font-size: 3em;
+	font-weight: 500;
 }
 h2 {
 	font-family: var(--heading-font);
