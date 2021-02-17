@@ -24,6 +24,7 @@
 		padding: 1.5em;
 		justify-items: center;
 		align-content: space-between;
+		text-align: center;
 	}
 
 	.logo {
