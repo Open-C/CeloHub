@@ -14,8 +14,8 @@
 		--sidebar-width: 14em;
 		--sidebar-button-width: 3em;
 
-		--space-outer: 2em;
-		--space-inner: 1.75em;
+		--space-outer: 2rem;
+		--space-inner: 1.75rem;
 
 		display: grid;
 		grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
@@ -82,18 +82,20 @@
 		background-color: var(--celo-dark);
 		color: var(--celo-light-gray);
 
-		padding: 2em;
-		gap: 2em;
 		width: var(--sidebar-width);
 		height: 100vh;
 		position: sticky;
 		top: 0;
+		padding: var(--space-outer);
 
 		display: grid;
 		grid-template-rows: minmax(0, 1fr) auto;
 		/* align-content: space-between; */
 
 		transition: 0.15s;
+	}
+	.sidebar-content {
+		display: grid;
 	}
 	.sidebar-button, .sidebar-backdrop {
 		display: none;
@@ -129,8 +131,8 @@
 		#container {
 			display: grid;
 			grid-template-columns: 0 minmax(0, 1fr);
-			--space-outer: 1.5em;
-			--space-inner: 1.25em;
+			--space-outer: 1.5rem;
+			--space-inner: 1.25rem;
 		}
 
 		.sidebar {
@@ -227,7 +229,7 @@
 
 	@media (max-width: 30rem) {
 		#container {
-			--space-outer: 1.25em;
+			--space-outer: 1.25rem;
 			font-size: 0.8em;
 		}
 
@@ -248,7 +250,9 @@
 <div id="container">
 	<aside class="sidebar" class:is-open={sidebarIsOpen}>
 		<Nav />
-		<button>Submit a Project</button>
+		<div class="sidebar-content">
+			<button>Submit a Project</button>
+		</div>
 		<span class="sidebar-button" on:click={() => sidebarIsOpen = !sidebarIsOpen}>☰</span>
 	</aside>
 	<span class="sidebar-backdrop" on:click={() => sidebarIsOpen = !sidebarIsOpen}></span>
