@@ -12,6 +12,7 @@
 	nav {
 		margin: 0 calc(-1 * var(--space-outer));
 		gap: 0.33em;
+		font-size: 1.1em;
 
 		overflow: hidden auto;
 	}
@@ -54,7 +55,9 @@
 	}
 	a.active {
 		background-color: var(--celo-dark);
+		color: var(--celo-gold);
 		font-weight: 900;
+		text-decoration: underline;
 	}
 
 	.nav-dropdown {
