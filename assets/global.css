@@ -86,7 +86,7 @@ label {
 	display: block;
 }
 
-input, button, textarea {
+input[type="text"], input[type="search"], button, textarea {
 	background-color: var(--celo-white);
 	box-shadow: 0 1px var(--depth) rgba(var(--celo-dark), 0.5);
 	border: none;
@@ -98,10 +98,6 @@ select {
 	background: none;
 	border: none;
 	cursor: pointer;
-}
-
-input[type="checkbox"] {
-	appearance: auto;
 }
 
 input:disabled {
