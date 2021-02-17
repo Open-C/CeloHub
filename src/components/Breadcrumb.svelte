@@ -22,18 +22,20 @@
 	}
 </style>
 
-<span class="breadcrumb row">
-	{#each ancestors as ancestorPage}
-		<a href={$url(ancestorPage.path)}>{capitalize(ancestorPage.title)}</a>
-		<span>›</span>
-	{/each}
-	{#if siblings?.length}
-		<select value={selectedPath} on:change={e => $goto(e.target.value)}>
-			{#each siblings as siblingPage}
-				<option value={siblingPage.path}>{capitalize(siblingPage.title)}</option>
-			{/each}
-		</select>
-	{:else}
-		<span>{capitalize(currentPage.title)}</span>
-	{/if}
-</span>
+{#if currentPage}
+	<span class="breadcrumb row">
+		{#each ancestors as ancestorPage}
+			<a href={$url(ancestorPage.path)}>{capitalize(ancestorPage.title)}</a>
+			<span>›</span>
+		{/each}
+		{#if siblings?.length}
+			<select value={selectedPath} on:change={e => $goto(e.target.value)}>
+				{#each siblings as siblingPage}
+					<option value={siblingPage.path}>{capitalize(siblingPage.title)}</option>
+				{/each}
+			</select>
+		{:else}
+			<span>{capitalize(currentPage.title)}</span>
+		{/if}
+	</span>
+{/if}
