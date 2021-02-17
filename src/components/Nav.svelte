@@ -11,7 +11,7 @@
 <style>
 	nav {
 		margin: 0 calc(-1 * var(--space-outer));
-		gap: 0.33em;
+		gap: 0.5em;
 		font-size: 1.1em;
 
 		overflow: hidden auto;
@@ -47,8 +47,8 @@
 		/* padding-block: calc(0.5em - var(--level) * 0.33em);
 		padding-inline-start: calc(var(--space-outer) + var(--level) * 1em);
 		padding-inline-end: var(--space-outer); */
-		padding-top: calc(0.5em - var(--level) * 0.33em);
-		padding-bottom: calc(0.5em - var(--level) * 0.33em);
+		padding-top: calc(0.33em - var(--level) * 0.2em);
+		padding-bottom: calc(0.33em - var(--level) * 0.2em);
 		padding-left: calc(var(--space-outer) + var(--level) * 1em);
 		padding-right: var(--space-outer);
 		font-weight: calc(600 - var(--level) * 200);
