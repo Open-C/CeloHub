@@ -60,7 +60,7 @@ export default {
                     postcss: {
 						plugins: [
 							postcssImport(),
-							autoprefixer()
+							autoprefixer({ browsers: "last 4 version" }),
 						]
 					},
                     defaults: { style: 'postcss' }
