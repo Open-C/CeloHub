@@ -51,12 +51,12 @@
 		padding-bottom: calc(0.5em - var(--level) * 0.33em);
 		padding-left: calc(var(--space-outer) + var(--level) * 1em);
 		padding-right: var(--space-outer);
-		font-weight: calc(700 - var(--level) * 300);
+		font-weight: calc(600 - var(--level) * 200);
 	}
 	a.active {
-		background-color: var(--celo-dark);
+		background-color: rgba(0, 0, 0, 0.25);
 		color: var(--celo-gold);
-		font-weight: 900;
+		font-weight: 800;
 		text-decoration: underline;
 	}
 
