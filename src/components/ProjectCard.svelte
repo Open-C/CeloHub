@@ -14,6 +14,7 @@
 
 	// Display options
 	export let showTags = true
+	export let showAllTags = false
 
 	import Tags from './Tags.svelte'
 	import { scale } from 'svelte/transition'
@@ -73,7 +74,7 @@
 			{/if}
 		</div>
 		{#if showTags}
-			<Tags tags={project.tags} />
+			<Tags tags={project.tags} bind:showAllTags={showAllTags} />
 		{/if}
 	</footer>
 </article>

@@ -31,7 +31,9 @@
 
 
 	// View options
-	export let showTags = true
+	// export let showTags = true
+	export let showAllTags = true
+
 
 	import Breadcrumb from './Breadcrumb.svelte'
 	import ProjectCard from './ProjectCard.svelte'
@@ -55,15 +57,20 @@
 		<slot>
 			<h3><Breadcrumb /></h3>
 		</slot>
-		<label>
+		<!-- <label>
 			<input type="checkbox" bind:checked={showTags} />
 			<span>Show Tags</span>
+		</label> -->
+		<label>
+			<input type="checkbox" bind:checked={showAllTags} />
+			<span>Show All Tags</span>
 		</label>
 	</header>
 
 	<div class="grid">
 		{#each liveProjects as project}
-			<ProjectCard {project} bind:showTags={showTags} />
+			<!-- <ProjectCard {project} bind:showTags={showTags} /> -->
+			<ProjectCard {project} bind:showAllTags={showAllTags} />
 		{:else}
 			We didn't find any projects here.
 		{/each}
@@ -74,10 +81,19 @@
 	<section>
 		<header class="sticky bar">
 			<h3>Coming Soon</h3>
+			<!-- <label>
+				<input type="checkbox" bind:checked={showTags} />
+				<span>Show Tags</span>
+			</label> -->
+			<label>
+				<input type="checkbox" bind:checked={showAllTags} />
+				<span>Show All Tags</span>
+			</label>
 		</header>
 		<div class="grid small">
 			{#each comingSoonProjects as project}
-				<ProjectCard {project} bind:showTags={showTags} />
+				<!-- <ProjectCard {project} bind:showTags={showTags} /> -->
+				<ProjectCard {project} bind:showAllTags={showAllTags} />
 			{/each}
 		</div>
 	</section>

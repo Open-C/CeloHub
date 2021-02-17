@@ -6,7 +6,8 @@
 	export let tags: Tag[]
 
 	// Display options
-	export let showFirstFew = true
+	export let showAllTags = false
+	let showCount = 3 // number of tags to show if not showing all
 
 	function simpleHash(str) {
 		let hash = 0
@@ -28,6 +29,8 @@
 		gap: 0.5em;
 		display: flex;
 		align-items: center;
+		overflow-x: auto;
+		position: relative;
 	}
 	.tags:not(.show-first-few) {
 		flex-wrap: wrap;
@@ -49,11 +52,11 @@
 	}
 </style>
 
-<div class="tags" class:show-first-few={showFirstFew}>
-	{#each showFirstFew ? tags.slice(0, 3) : tags as tag}
+<div class="tags" class:show-first-few={!showAllTags}>
+	{#each showAllTags ? tags : tags.slice(0, showCount) as tag}
 		<span class="tag" style="--tag-color: {getTagColor(tag)}">{tag}</span>
 	{/each}
-	{#if tags.length > 3 && showFirstFew}
-		<span class="other-count">+{tags.length - 3}</span>
+	{#if tags.length > 3 && !showAllTags}
+		<span class="other-count">+{tags.length - showCount}</span>
 	{/if}
 </div>
