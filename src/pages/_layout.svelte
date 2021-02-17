@@ -45,7 +45,8 @@
 	#logo {
 		display: grid;
 		grid-auto-flow: column;
-		gap: 0.5em;
+		gap: 0.75em;
+		line-height: 1;
 		align-items: center;
 		color: inherit;
 	}
@@ -54,9 +55,13 @@
 	}
 	#logo .divider {
 		font-size: 1.75em;
+		opacity: 0.4;
+		border-right: 2px solid;
+		height: 1em;
 	}
 	#logo .tagline {
 		font-size: 1.3em;
+		opacity: 0.6;
 	}
 
 
@@ -220,8 +225,16 @@
 	}
 
 	@media (max-width: 30rem) {
-		.no-mobile {
+		#logo {
+			grid-auto-flow: row;
+			text-align: center;
+			gap: 0.5em;
+		}
+		#logo .divider {
 			display: none;
+		}
+		#logo .tagline {
+			font-size: 0.8em;
 		}
 	}
 </style>
@@ -238,8 +251,10 @@
 		<header>
 			<a href={$url('/')} id="logo">
 				<h1>CeloHub</h1>
-				<span class="divider no-mobile">|</span>
-				<span class="tagline no-mobile">To Prosperity & Beyond</span>
+				<span class="divider">
+					<!-- | -->
+				</span>
+				<p class="tagline">To Prosperity & Beyond</p>
 			</a>
 			<div class="search-container">
 				<input type="search" placeholder="🔍 Search CeloHub..." />
