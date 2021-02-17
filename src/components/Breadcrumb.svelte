@@ -26,7 +26,7 @@
 <span class="breadcrumb row">
 	{#each ancestors as ancestorPage}
 		<a href={$url(ancestorPage.path)}>{capitalize(ancestorPage.title)}</a>
-		<span>></span>
+		<span>›</span>
 	{/each}
 	{#if siblings?.length}
 		<select bind:value={selectedPath} on:change={e => $goto(e.target.value)}>
