@@ -24,6 +24,7 @@
 	header {
 		position: sticky;
 		top: 0;
+		z-index: 1;
 		backdrop-filter: blur(20px);
 
 		display: grid;
@@ -31,7 +32,9 @@
 		align-items: center;
 		justify-items: center;
 		grid-auto-flow: column;
+
 		padding: var(--space-outer);
+		padding-bottom: calc(var(--space-outer) * 0.5);
 	}
 	header:before {
 		content: '';
@@ -49,9 +52,10 @@
 		line-height: 1;
 		align-items: center;
 		color: inherit;
+		/* font-size: 1.3em; */
 	}
 	#logo h1 {
-		font-size: 1.75em;
+		font-size: 1.9em;
 	}
 	#logo .divider {
 		font-size: 1.75em;
@@ -99,20 +103,11 @@
 	main {
 		flex: 1;
 		padding: var(--space-outer);
+		padding-top: calc(var(--space-outer) * 0.5);
 
 		display: grid;
-		grid-template-columns: repeat(auto-fit, [col] minmax(calc(16em + 0.2vw), 1fr));
 		gap: var(--space-inner);
 		align-content: start;
-	}
-	@media (max-width: 38rem) {
-		/* main {
-			grid-template-columns: minmax(0, 1fr);
-			grid-auto-flow: row;
-		} */
-		main > * {
-			grid-column: 1 / -1;
-		}
 	}
 
 	footer {
@@ -205,7 +200,7 @@
 		header {
 			grid-template-columns: 1fr 0;
 		}
-		.search-container {
+		.search-form {
 			justify-self: end;
 		}
 		input[type="search"] {
@@ -214,6 +209,7 @@
 			transition: transform 0.3s;
 			min-width: 50vw;
 			padding-left: 1em;
+			z-index: 1;
 		}
 		input[type="search"]:not(:focus) {
 			transform: translateX(calc(100% - var(--sidebar-button-width) + var(--space-outer)));
@@ -225,6 +221,10 @@
 	}
 
 	@media (max-width: 30rem) {
+		#container {
+			--space-outer: 1.25em;
+		}
+
 		#logo {
 			grid-auto-flow: row;
 			text-align: center;
@@ -260,9 +260,9 @@
 				</span>
 				<p class="tagline">To Prosperity & Beyond</p>
 			</a>
-			<div class="search-container">
+			<form class="search-form">
 				<input type="search" placeholder="🔍 Search CeloHub..." />
-			</div>
+			</form>
 		</header>
 
 		<main>
@@ -273,7 +273,7 @@
 		<footer>
 			<span>Made with <img alt="love"> by OpenC</span>
 			<a href="https://github.com" targt="_blank">GitHub</a>
-			<span>Donate: 0x0000000000000000000000000000000000000000</span>
+			<!-- <span style="overflow: hidden; text-overflow: ellipsis">Donate: 0x0000000000000000000000000000000000000000</span> -->
 		</footer>
 	</div>
 </div>

@@ -33,7 +33,7 @@
 	import ProjectCard from './ProjectCard.svelte'
 </script>
 
-<div class="full bar">
+<div class="bar">
 	<slot>
 		<h3><Breadcrumb /></h3>
 	</slot>
@@ -43,6 +43,8 @@
 	</label>
 </div>
 
-{#each filteredProjects as project}
-	<ProjectCard {project} bind:showTags={showTags} />
-{/each}
+<div class="grid">
+	{#each filteredProjects as project}
+		<ProjectCard {project} bind:showTags={showTags} />
+	{/each}
+</div>
