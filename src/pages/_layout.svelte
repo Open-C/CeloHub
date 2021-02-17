@@ -53,6 +53,10 @@
 		align-items: center;
 		color: inherit;
 		/* font-size: 1.3em; */
+		text-decoration: none;
+	}
+	#logo:hover, #logo:active {
+		opacity: 0.75;
 	}
 	#logo h1 {
 		font-size: 1.9em;
