@@ -99,7 +99,8 @@
 					{/if}
 				</div>
 				{#if children?.length}
-					<ul transition:fade={{}}>
+					<!-- <ul transition:fade={{duration: 200}}> -->
+					<ul>
 						{#each children as { path, title }}
 							<li class:active={$isActive(path)}>
 								<a href={$url(path)}>{capitalize(title)}</a>
