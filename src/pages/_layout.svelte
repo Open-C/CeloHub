@@ -236,6 +236,10 @@
 		#logo .tagline {
 			font-size: 0.8em;
 		}
+
+		main {
+			font-size: 0.8em;
+		}
 	}
 </style>
 
