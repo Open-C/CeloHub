@@ -21,17 +21,29 @@
 	.featured-projects {
 		display: grid;
 		align-items: center;
-		grid-template-columns: 12em minmax(0, 1fr);
+		/* grid-template-columns: minmax(0, 1fr) 12em;
+		grid-auto-flow: dense; */
+		grid:
+			"content title"
+			/ minmax(0, 1fr) 12em;
 		gap: 2em;
 	}
 	.featured-projects-title {
 		display: grid;
 		gap: 1em;
+		/* grid-column-end: -1; */
+		grid-area: title;
+	}
+	.featured-projects-content {
+		grid-area: content;
 	}
 	@media (max-width: 40rem) {
 		.featured-projects {
 			display: grid;
-			grid-template-columns: initial;
+			/* grid-template-columns: initial; */
+			grid:
+				"title"
+				"content";
 			margin-bottom: 1em;
 			gap: 1em;
 		}
@@ -53,9 +65,29 @@
 		align-items: center;
 	}
 
+	.featured-card {
+		display: grid;
+		grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+		gap: 2em;
+	}
+	/* @media (max-width: 50rem) {
+		.featured-card {
+			display: grid;
+			grid-template-columns: initial;
+		}
+		.featured-card img {
+			height: 10em;
+			justify-self: center;
+		}
+	} */
+	.featured-card > div {
+		display: grid;
+		gap: 1em;
+	}
+
 	.education-card {
 		display: grid;
-		grid-template-columns: 30em minmax(0, 1fr);
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		gap: 2em;
 	}
 	@media (max-width: 50rem) {
@@ -81,12 +113,15 @@
 	</div>
 
 
-	<article class="card">
-		<h3>Donate to UBI Beneficiaries</h3>
-		<p>Give directly to refugees in Venezuela. Over $200K distributed to 10K people!</p>
-		<p>
-			<a href="https://impactmarket.com" target="_blank"><button>Give to a beneficiary</button></a>
-		</p>
+	<article class="featured-projects-content featured-card card">
+		<div>
+			<h3>Donate to UBI Beneficiaries</h3>
+			<p>Give directly to refugees in Venezuela. Over $200K distributed to 10K people!</p>
+			<p>
+				<a href="https://impactmarket.com" target="_blank"><button>Give to a beneficiary</button></a>
+			</p>
+		</div>
+		<img src="/images/branding/donate-to-ubi.png" alt="Donate to UBI Beneficiaries">
 	</article>
 	<!-- <CardStack>
 		<article class="card" slot="1">
