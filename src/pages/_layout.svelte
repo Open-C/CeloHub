@@ -255,7 +255,7 @@
 	<aside class="sidebar" class:is-open={sidebarIsOpen}>
 		<Nav />
 		<div class="sidebar-content">
-			<button>Submit a Project</button>
+			<a href="https://forms.gle/uWFvLtXqQ2huEfPA9" target="_blank"><button>Submit a Project</button></a>
 		</div>
 		<span class="sidebar-button" on:click={() => sidebarIsOpen = !sidebarIsOpen}>☰</span>
 	</aside>
