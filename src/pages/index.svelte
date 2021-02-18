@@ -68,7 +68,7 @@
 	.featured-card {
 		display: grid;
 		grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-		gap: 2em;
+		gap: 1em;
 	}
 	/* @media (max-width: 50rem) {
 		.featured-card {
