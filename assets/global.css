@@ -230,7 +230,7 @@ hr {
 	--column-size: calc(16em + 0.2vw);
 
 	display: grid;
-	grid-template-columns: repeat(auto-fit, [col] minmax(var(--column-size), 1fr));
+	grid-template-columns: repeat(auto-fill, [col] minmax(var(--column-size), 1fr));
 	gap: var(--space-inner);
 	align-content: start;
 }
