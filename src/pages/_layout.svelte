@@ -92,6 +92,10 @@
 	}
 	.sidebar-content {
 		display: grid;
+
+		/* Hack because of 100vh mobile Webkit bug */
+		position: sticky;
+		bottom: var(--space-outer);
 	}
 	.sidebar-button, .sidebar-backdrop {
 		display: none;
