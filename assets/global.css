@@ -139,21 +139,32 @@ button:focus {
 
 
 .card {
-	--depth: 10px;
+	--depth: 5px;
+	--y: 0;
+
 	background-color: var(--celo-white);
-	box-shadow: 0 1px var(--depth) rgba(0, 0, 0, 0.06);
+	box-shadow: 0 var(--depth) calc(1px + var(--depth)) rgba(0, 0, 0, 0.06);
 	border-radius: 1.5em;
-	padding: 2.5em;
+	padding: 2em;
+
 	transition: 0.3s;
 
 	display: grid;
 	gap: 1.25em;
-}
-.card:hover {
-	--depth: 15px;
+
+	transform: translateY(var(--y));
 }
 .card.static {
 	box-shadow: none;
+}
+.card:not(.static):hover, .card:not(.static):focus {
+	--depth: 10px;
+	--y: -3px;
+}
+
+a.card {
+	color: inherit;
+	text-decoration: none;
 }
 
 
