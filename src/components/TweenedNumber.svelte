@@ -22,6 +22,7 @@
 <style>
 	.tweened-number {
 		font-family: var(--heading-font);
+		transform-origin: left center;
 		animation: Blink 1000ms;
 	}
 
