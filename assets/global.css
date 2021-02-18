@@ -82,7 +82,7 @@ h5 {
 a {
 	color: var(--celo-green);
 	text-decoration: none;
-	transition: 0.3s ;
+	transition: 0.3s;
 }
 a:hover {
 	text-decoration: underline;
@@ -154,7 +154,7 @@ button:focus {
 	border-radius: 1.5em;
 	padding: 2em;
 
-	transition: 0.3s;
+	transition: 0.25s;
 
 	display: grid;
 	gap: 1.25em;
@@ -167,6 +167,11 @@ button:focus {
 .card:not(.static):hover, .card:not(.static):focus {
 	--depth: 10px;
 	--y: -3px;
+}
+.card:not(.static):active {
+	transition: 0.05s;
+	--depth: 1px;
+	--y: 1px;
 }
 
 a.card {
