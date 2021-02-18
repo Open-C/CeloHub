@@ -25,6 +25,30 @@
 		width: auto;
 		height: 13em;
 	}
+
+	.card {
+		gap: 1em;
+		align-items: center;
+	}
+
+	.education-card {
+		display: grid;
+		grid-template-columns: 30em 1fr;
+		gap: 2em;
+	}
+	@media (max-width: 50rem) {
+		.education-card {
+			display: grid;
+			grid-template-columns: initial;
+		}
+	}
+	.education-card iframe {
+		border-radius: 0.5em;
+	}
+	.education-card div {
+		display: grid;
+		gap: 1em;
+	}
 </style>
 
 
@@ -95,20 +119,32 @@
 	</a>
 </div>
 
-<div class="card full">
-	<h3>What is the Celo Platform?</h3>
-	<p>The Celo platform aims to make financial tools borderless, easy to use, and accessible for anyone with a mobile phone.</p>
-	<button>Watch video & earn $2 CELO on Coinbase</button>
+<div class="education-card card static full">
+	<!-- <img src="/images/branding/learn-video-1.png" alt="Learn Video 1"> -->
+	<iframe src="https://www.youtube.com/embed/ofQD_hhq09g?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0"></iframe>
+	<div>
+		<h3>What is the Celo Platform?</h3>
+		<p>The Celo platform aims to make financial tools borderless, easy to use, and accessible for anyone with a mobile phone.</p>
+		<button>Watch on Coinbase to earn $2</button>
+	</div>
 </div>
 
-<div class="card full">
-	<h3>What is Celo?</h3>
-	<p>Celo is the core utility, reserve, staking, and governance asset for the Celo platform. From staking, to voting, to arbitrage.</p>
-	<button>Watch video & earn $2 CELO on Coinbase</button>
+<div class="education-card card static full">
+	<!-- <img src="/images/branding/learn-video-2.png" alt="Learn Video 2"> -->
+	<iframe src="https://www.youtube.com/embed/mkpTmbkRv4A?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0"></iframe>
+	<div>
+		<h3>What is Celo?</h3>
+		<p>Celo is the core utility, reserve, staking, and governance asset for the Celo platform. From staking, to voting, to arbitrage.</p>
+		<button>Watch on Coinbase to earn $2</button>
+	</div>
 </div>
 
-<div class="card full">
-	<h3>What can Celo Dollars do?</h3>
-	<p>Celo Dollars (cUSD) are stablecoins that track the US dollar. Anyone with a mobile phone can send, receive, and store Celo Dollars for free.</p>
-	<button>Watch video & earn $2 CELO on Coinbase</button>
+<div class="education-card card static full">
+	<!-- <img src="/images/branding/learn-video-3.png" alt="Learn Video 3"> -->
+	<iframe src="https://www.youtube.com/embed/n1k1JcjTnp8?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0"></iframe>
+	<div>
+		<h3>What can Celo Dollars do?</h3>
+		<p>Celo Dollars (cUSD) are stablecoins that track the US dollar. Anyone with a mobile phone can send, receive, and store Celo Dollars for free.</p>
+		<button>Watch video & earn $2 CELO on Coinbase</button>
+	</div>
 </div>
