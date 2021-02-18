@@ -21,6 +21,7 @@
 
 <style>
 	.tweened-number {
+		font-family: var(--heading-font);
 		animation: Blink 1000ms;
 	}
 
