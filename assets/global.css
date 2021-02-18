@@ -47,6 +47,15 @@ html, body {
 	overflow: hidden auto;
 }
 
+/* Mobile Webkit 100vh hack */
+html {
+	height: -webkit-fill-available;
+}
+body {
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
+}
+
 
 h1 {
 	font-family: var(--heading-font);
