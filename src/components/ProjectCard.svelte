@@ -45,6 +45,10 @@
 	.project-links img {
 		width: 2em;
 	}
+
+	h3 a {
+		color: inherit;
+	}
 </style>
 
 <!-- <article class="project card" transition:scale={{duration: 300}}> -->
@@ -56,7 +60,13 @@
 		<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" />
 	{/if}
 	{#if !project.logo && !project.thumbnail}
-		<h3>{project.name}</h3>
+		<h3>
+			{#if project.website}
+				<a href={project.website}>{project.name}</a>
+			{:else}
+				{project.name}
+			{/if}
+		</h3>
 	{/if}
 	<footer>
 		<div class="project-links">
