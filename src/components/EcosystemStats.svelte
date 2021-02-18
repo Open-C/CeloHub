@@ -1,5 +1,5 @@
 <script lang="ts">
-	let tonsCO2Captured = 2088.2 // 2063418
+	let tonsCO2Captured = 2088.2 // 2088.2
 	let totalBlocks = 0 // 4746421
 	let totalTransactions = 0 // 2063418
 	let walletAddresses = 0 // 70994
@@ -46,7 +46,7 @@
 		break-inside: avoid;
 	}
 
-	@media (min-width: 24rem) {
+	@media (min-width: 22rem) {
 		#ecosystem-stats {
 			columns: 2;
 		}
@@ -61,7 +61,7 @@
 		}
 	}
 
-	@media (min-width: 69rem) {
+	@media (min-width: 65rem) {
 		#ecosystem-stats {
 			columns: 4;
 		}
@@ -74,7 +74,7 @@
 		margin: auto;
 
 		display: grid;
-		grid-template-columns: 3rem 1fr;
+		grid-template-columns: 2.75rem 1fr;
 		gap: 0.5em;
 		align-items: center;
 		padding: 1em;
@@ -87,6 +87,7 @@
 	.stat span {
 		opacity: 0.5;
 		white-space: nowrap;
+		font-size: 0.9em;
 	}
 	.stat :global(.tweened-number) {
 		font-size: 1.5em;
