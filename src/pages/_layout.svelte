@@ -272,7 +272,7 @@
 				<p class="tagline">To Prosperity & Beyond</p>
 			</a>
 			<form class="search-form">
-				<input type="search" placeholder="🔍 Search CeloHub..." />
+				<!-- <input type="search" placeholder="🔍 Search CeloHub..." /> -->
 			</form>
 		</header>
 
