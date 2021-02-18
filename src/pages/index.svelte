@@ -125,7 +125,7 @@
 	<div>
 		<h3>What is the Celo Platform?</h3>
 		<p>The Celo platform aims to make financial tools borderless, easy to use, and accessible for anyone with a mobile phone.</p>
-		<button>Watch on Coinbase to earn $2</button>
+		<a href="https://www.coinbase.com/earn/celo/lesson/1"><button>Watch on Coinbase to earn $2</button></a>
 	</div>
 </div>
 
@@ -135,7 +135,7 @@
 	<div>
 		<h3>What is Celo?</h3>
 		<p>Celo is the core utility, reserve, staking, and governance asset for the Celo platform. From staking, to voting, to arbitrage.</p>
-		<button>Watch on Coinbase to earn $2</button>
+		<a href="https://www.coinbase.com/earn/celo/lesson/2"><button>Watch on Coinbase to earn $2</button></a>
 	</div>
 </div>
 
@@ -145,6 +145,6 @@
 	<div>
 		<h3>What can Celo Dollars do?</h3>
 		<p>Celo Dollars (cUSD) are stablecoins that track the US dollar. Anyone with a mobile phone can send, receive, and store Celo Dollars for free.</p>
-		<button>Watch on Coinbase to earn $2</button>
+		<a href="https://www.coinbase.com/earn/celo/lesson/3"><button>Watch on Coinbase to earn $2</button></a>
 	</div>
 </div>
