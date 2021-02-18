@@ -5,4 +5,4 @@
 	import ProjectCards from '../../components/ProjectCards.svelte'
 </script>
 
-<ProjectCards filterByCategory="Staking" />
+<ProjectCards filterByCategory="Stake" />
