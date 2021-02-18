@@ -32,41 +32,106 @@
 <style>
 	#ecosystem-stats {
 		display: block;
-		columns: 4;
 		column-rule: 1px solid var(--celo-gray);
+		gap: 0;
+
+		padding: 0;
+		overflow-x: auto;
 		text-align: center;
-		gap: var(--space-inner);
+
+		font-size: 0.9em;
+		/* font-size: calc(0.7em + 0.4vw); */
+	}
+	#ecosystem-stats > * {
+		break-inside: avoid;
 	}
 
-	#ecosystem-stats span {
+	@media (min-width: 24rem) {
+		#ecosystem-stats {
+			columns: 2;
+		}
+		/* hr:not(:nth-of-type(2n + 1)) {
+			display: none;
+		} */
+		hr:not(:nth-of-type(2)) {
+			display: none;
+		}
+		hr:nth-of-type(2) {
+			column-span: all;
+		}
+	}
+
+	@media (min-width: 69rem) {
+		#ecosystem-stats {
+			columns: 4;
+		}
+		hr {
+			display: none;
+		}
+	}
+
+	.stat {
+		margin: auto;
+
+		display: grid;
+		grid-template-columns: 3rem 1fr;
+		gap: 0.5em;
+		align-items: center;
+		padding: 1em;
+		text-align: left;
+	}
+	.stat img {
+		width: 100%;
+		max-height: 3rem;
+	}
+	.stat span {
 		opacity: 0.5;
+		white-space: nowrap;
 	}
-
-	#ecosystem-stats :global(.tweened-number) {
+	.stat :global(.tweened-number) {
 		font-size: 1.5em;
 		display: block;
 	}
 </style>
 
 <div id="ecosystem-stats" class="card static full">
-	<p class="stat">
-		<TweenedNumber bind:number={tonsCO2Captured} maxDecimals=1 />
-		<span>Tons of CO<sub>2</sub> Captured</span>
-	</p>
-	<p class="stat">
-		<TweenedNumber bind:number={totalBlocks} />
-		<span>Total blocks</span>
-	</p>
-	<p class="stat">
-		<TweenedNumber bind:number={totalTransactions} />
-		<span>Total transactions</span>
-	</p>
-	<!-- <p class="stat">
-		<TweenedNumber bind:number={walletAddresses} />
-		<span>Wallet addresses</span>
-	</p> -->
-	<p class="stat">
-		<TweenedNumber bind:number={cUSDInCirculation} />
-		<span>cUSD in circulation</span>
-	</p>
+	<div class="stat">
+		<img src="/images/branding/total-blocks.png" alt="total blocks">
+		<div>
+			<TweenedNumber bind:number={totalBlocks} />
+			<span>total blocks</span>
+		</div>
+	</div>
+	<hr>
+	<div class="stat">
+		<img src="/images/branding/total-txns.png" alt="total transactions">
+		<div>
+			<TweenedNumber bind:number={totalTransactions} />
+			<span>total transactions</span>
+		</div>
+	</div>
+	<!-- <div class="stat">
+		<hr>
+		<img src="/images/branding/wallet-addies.png" alt="cUSD in circulation">
+		<div>
+			<TweenedNumber bind:number={walletAddresses} />
+			<span>Wallet addresses</span>
+		</div>
+	</div> -->
+	<hr>
+	<div class="stat">
+		<img src="/images/branding/wallet-addies.png" alt="cUSD in circulation">
+		<div>
+			<TweenedNumber bind:number={cUSDInCirculation} />
+			<span>cUSD in circulation</span>
+		</div>
+	</div>
+	<hr>
+	<div class="stat">
+		<img src="/images/branding/carbon-offset.png" alt="carbon offset">
+		<div>
+			<TweenedNumber bind:number={tonsCO2Captured} maxDecimals=1 />
+			<span>tons of CO<sub>₂</sub> offset</span>
+		</div>
+	</div>
 </div>
