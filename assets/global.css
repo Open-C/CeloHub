@@ -48,13 +48,13 @@ html, body {
 }
 
 /* Mobile Webkit 100vh hack */
-html {
+/* html {
 	height: -webkit-fill-available;
 }
 body {
 	min-height: 100vh;
 	min-height: -webkit-fill-available;
-}
+} */
 
 
 h1 {
