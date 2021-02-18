@@ -73,7 +73,7 @@
 				<a href={project.github}><img src={icons.github} alt="Github" /></a>
 			{/if}
 		</div>
-		{#if showTags}
+		{#if showTags && project.tags.length}
 			<Tags tags={project.tags} bind:showAllTags={showAllTags} />
 		{/if}
 	</footer>
