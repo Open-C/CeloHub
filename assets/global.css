@@ -235,7 +235,7 @@ hr {
 	align-content: start;
 }
 .grid.small {
-	--column-size: calc(9em + 0.15vw);
+	--column-size: calc(11em + 0.15vw);
 }
 /* @media (max-width: 38rem) { */
 	/* .grid {
