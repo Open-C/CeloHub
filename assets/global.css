@@ -128,7 +128,8 @@ button {
 	color: var(--celo-dark);
 	background-color: var(--celo-green);
 	outline: none;
-	cursor:pointer;
+	cursor: pointer;
+	padding: 0.5em 1em;
 	transition: 0.3s;
 }
 button:hover {
@@ -190,6 +191,14 @@ hr {
 	border: none;
 	border-bottom: 1px solid;
 	opacity: 0.15;
+}
+
+
+iframe {
+	border: none;
+	width: 100%;
+	aspect-ratio: 16/9;
+	object-fit: contain;
 }
 
 
