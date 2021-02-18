@@ -46,9 +46,10 @@
 		content: '';
 		position: absolute;
 		--inset: -0.5em;
-		inset: var(--inset); left: var(--inset); right: var(--inset); top: var(--inset); bottom: var(--inset);
+		inset: var(--inset); left: var(--inset); right: var(--inset); top: var(--inset); bottom: 0;
+		transform: rotate(-0.5deg);
 		background: no-repeat right / contain url(/images/branding/evolving-celo.png);
-		opacity: 0.2;
+		opacity: 0.15;
 		pointer-events: none;
 	}
 
