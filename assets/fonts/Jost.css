@@ -1,6 +1,6 @@
 /* JOST* */
 
-@font-face {
+/*@font-face {
 	font-family: "Jost";
 	src:
 		local("Jost"),
@@ -31,7 +31,7 @@
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
-}
+}*/
 
 @font-face {
 	font-family: "Jost";
@@ -99,7 +99,7 @@
 	font-display: swap;
 }
 
-@font-face {
+/*@font-face {
 	font-family: "Jost";
 	src:
 		local("Jost"),
@@ -197,3 +197,4 @@
 	font-style: italic;
 	font-display: swap;
 }
+*/
