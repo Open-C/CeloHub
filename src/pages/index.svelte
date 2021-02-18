@@ -37,7 +37,7 @@
 	.featured-projects-content {
 		grid-area: content;
 	}
-	@media (max-width: 40rem) {
+	@media (max-width: 45rem) {
 		.featured-projects {
 			display: grid;
 			/* grid-template-columns: initial; */
@@ -67,8 +67,12 @@
 
 	.featured-card {
 		display: grid;
-		grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+		grid-template-columns: minmax(0, 1.75fr) auto;
 		gap: 1em;
+	}
+	.featured-card img {
+		width: auto;
+		height: 10em;
 	}
 	/* @media (max-width: 50rem) {
 		.featured-card {
