@@ -40,6 +40,7 @@
 		padding: var(--header-space-outer-vertical) var(--space-outer);
 
 		height: var(--header-height);
+		z-index: 2;
 	}
 	header:after {
 		content: '';
@@ -149,7 +150,7 @@
 		.sidebar {
 			position: sticky;
 			top: 0;
-			z-index: 3;
+			z-index: 4;
 			outline: none;
 			will-change: transform;
 			transform: translateX(-100%);
@@ -187,7 +188,7 @@
 
 			transition: 0.3s;
 
-			z-index: 2;
+			z-index: 3;
 			pointer-events: none;
 		}
 		.sidebar-backdrop:before {
