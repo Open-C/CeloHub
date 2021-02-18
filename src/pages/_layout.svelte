@@ -20,6 +20,7 @@
 	#container {
 		--sidebar-width: 13em;
 		--sidebar-button-width: 3em;
+		--sidebar-button-height: 3em;
 
 		--space-outer: 2rem;
 		--space-inner: 1.75rem;
@@ -168,7 +169,7 @@
 			justify-content: center;
 			align-items: center;
 			width: var(--sidebar-button-width);
-			height: 3em;
+			height: var(--sidebar-button-height);
 
 			background: inherit;
 			border-top-right-radius: 0.25em;
@@ -244,6 +245,8 @@
 	@media (max-width: 30rem) {
 		#container {
 			--space-outer: 1.25rem;
+			--sidebar-button-width: calc(3em * 0.8);
+			--sidebar-button-height: calc(3em * 0.8);
 		}
 
 		.main-column {
