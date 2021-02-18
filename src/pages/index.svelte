@@ -4,34 +4,18 @@
 	metatags.description = 'CeloHub | To Prosperity & Beyond'
 
 
-	const stats = {
-		totalTransactions: 2063418,
-		totalBlocks: 4746421,
-		walletAddresses: 70994,
-		cUSDInCirculation: 31072411
-	}
-	function formatNumber(number){
-		return new Intl.NumberFormat(globalThis.navigator.languages).format(number)
-	}
-
-
 	import CardStack from '../components/CardStack.svelte'
-	import Number from '../components/Number.svelte'
+	import EcosystemStats from '../components/EcosystemStats.svelte'
 </script>
 
 <style>
 	.full {
 		grid-column: 1 / -1;
 	}
-	.span-2 {
-		grid-column-end: span 2;
-	}
-
-	#ecosystem-stats {
-		display: block;
-		columns: 4;
-		column-rule: 1px solid var(--celo-gray);
-		text-align: center;
+	@media (min-width: 38rem) {
+		.two-to-end {
+			grid-column: 2 / -1;
+		}
 	}
 </style>
 
@@ -40,7 +24,7 @@
 	<h3>Featured Projects</h3>
 </div>
 
-<div class="span-2">
+<div class="two-to-end">
 	<CardStack>
 		<article class="card">
 			<h3>Donate to UBI Beneficiaries</h3>
@@ -69,47 +53,32 @@
 	</CardStack>
 </div>
 
-<div id="ecosystem-stats" class="card static full">
-	<p>
-		<Number number={stats.totalTransactions} />
-		<span>Total transactions</span>
-	</p>
-	<p>
-		<Number number={stats.totalBlocks} />
-		<span>Total blocks</span>
-	</p>
-	<p>
-		<Number number={stats.walletAddresses} />
-		<span>Wallet addresses</span>
-	</p>
-	<p>
-		<Number number={stats.cUSDInCirculation} />
-		<span>cUSD in circulation</span>
-	</p>
-</div>
+<EcosystemStats />
 
-<div class="card">
-	<h3>Mobile DApps</h3>
-</div>
+<div class="grid">
+	<div class="card">
+		<h3>Mobile Apps</h3>
+	</div>
 
-<div class="card">
-	<h3>Developer Tools</h3>
-</div>
+	<div class="card">
+		<h3>Developer Tools</h3>
+	</div>
 
-<div class="card">
-	<h3>Infrastructure</h3>
-</div>
+	<div class="card">
+		<h3>Infrastructure</h3>
+	</div>
 
-<div class="card">
-	<h3>Ecosystem</h3>
-</div>
+	<div class="card">
+		<h3>Ecosystem</h3>
+	</div>
 
-<div class="card">
-	<h3>Education</h3>
-</div>
+	<div class="card">
+		<h3>Education</h3>
+	</div>
 
-<div class="card">
-	<h3>Purchase</h3>
+	<div class="card">
+		<h3>Purchase</h3>
+	</div>
 </div>
 
 <div class="card full">
