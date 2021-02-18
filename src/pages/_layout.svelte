@@ -45,7 +45,7 @@
 	header:after {
 		content: '';
 		position: absolute;
-		--inset: -1em;
+		--inset: -0.5em;
 		inset: var(--inset); left: var(--inset); right: var(--inset); top: var(--inset); bottom: var(--inset);
 		background: no-repeat right / contain url(/images/branding/evolving-celo.png);
 		opacity: 0.2;
