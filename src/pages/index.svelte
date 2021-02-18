@@ -63,7 +63,7 @@
 			<p>Give directly to refugees in Venezuela. Over $200K distributed to 10K people!</p>
 			<p>
 				<!-- <button>See the impact</button> -->
-				<a href="https://impactmarket.com"><button>Give to a beneficiary</button></a>
+				<a href="https://impactmarket.com" target="_blank"><button>Give to a beneficiary</button></a>
 			</p>
 		</article>
 		<article class="card">
@@ -71,7 +71,7 @@
 			<p>Raise funds and support causes that matter.</p>
 			<p>
 				<!-- <button>See the impact</button> -->
-				<a href="https://www.doni.app"><button>Save an Urban Forest</button></a>
+				<a href="https://www.doni.app" target="_blank"><button>Save an Urban Forest</button></a>
 			</p>
 		</article>
 		<article class="card">
@@ -79,7 +79,7 @@
 			<p>Provide aid directly to those impacted by the devastating typhoion last Nov.</p>
 			<p>
 				<!-- <button>Food for a Day</button> -->
-				<a href="https://valoraapp.com/donate"><button>Medical Voucher</button></a>
+				<a href="https://valoraapp.com/donate" target="_blank"><button>Medical Voucher</button></a>
 			</p>
 		</article>
 	</CardStack>
@@ -125,7 +125,7 @@
 	<div>
 		<h3>What is the Celo Platform?</h3>
 		<p>The Celo platform aims to make financial tools borderless, easy to use, and accessible for anyone with a mobile phone.</p>
-		<a href="https://www.coinbase.com/earn/celo/lesson/1"><button>Watch on Coinbase to earn $2</button></a>
+		<a href="https://www.coinbase.com/earn/celo/lesson/1" target="_blank"><button>Watch on Coinbase to earn $2</button></a>
 	</div>
 </div>
 
@@ -135,7 +135,7 @@
 	<div>
 		<h3>What is Celo?</h3>
 		<p>Celo is the core utility, reserve, staking, and governance asset for the Celo platform. From staking, to voting, to arbitrage.</p>
-		<a href="https://www.coinbase.com/earn/celo/lesson/2"><button>Watch on Coinbase to earn $2</button></a>
+		<a href="https://www.coinbase.com/earn/celo/lesson/2" target="_blank"><button>Watch on Coinbase to earn $2</button></a>
 	</div>
 </div>
 
@@ -145,6 +145,6 @@
 	<div>
 		<h3>What can Celo Dollars do?</h3>
 		<p>Celo Dollars (cUSD) are stablecoins that track the US dollar. Anyone with a mobile phone can send, receive, and store Celo Dollars for free.</p>
-		<a href="https://www.coinbase.com/earn/celo/lesson/3"><button>Watch on Coinbase to earn $2</button></a>
+		<a href="https://www.coinbase.com/earn/celo/lesson/3" target="_blank"><button>Watch on Coinbase to earn $2</button></a>
 	</div>
 </div>
