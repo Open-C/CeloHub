@@ -23,7 +23,8 @@
 
 		--space-outer: 2rem;
 		--space-inner: 1.75rem;
-		--header-height: calc(var(--space-outer) * 2 + 2.75em);
+		--header-space-outer-vertical: 1rem;
+		--header-height: calc(var(--header-space-outer-vertical) * 2 + 3em);
 
 		display: grid;
 		grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
@@ -36,7 +37,7 @@
 		justify-items: center;
 		grid-auto-flow: column;
 
-		padding: var(--space-outer);
+		padding: var(--header-space-outer-vertical) var(--space-outer);
 
 		height: var(--header-height);
 	}
@@ -164,7 +165,7 @@
 			position: absolute;
 			left: calc(100% + var(--space-inner));
 			left: 100%;
-			top: var(--space-inner);
+			top: var(--header-space-outer-vertical);
 
 			cursor: pointer;
 		}
