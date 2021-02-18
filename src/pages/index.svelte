@@ -145,6 +145,6 @@
 	<div>
 		<h3>What can Celo Dollars do?</h3>
 		<p>Celo Dollars (cUSD) are stablecoins that track the US dollar. Anyone with a mobile phone can send, receive, and store Celo Dollars for free.</p>
-		<button>Watch video & earn $2 CELO on Coinbase</button>
+		<button>Watch on Coinbase to earn $2</button>
 	</div>
 </div>
