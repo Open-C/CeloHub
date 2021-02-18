@@ -18,7 +18,7 @@
 
 <style>
 	#container {
-		--sidebar-width: 14em;
+		--sidebar-width: 13em;
 		--sidebar-button-width: 3em;
 
 		--space-outer: 2rem;
