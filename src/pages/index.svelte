@@ -62,24 +62,24 @@
 			<h3>Donate to UBI Beneficiaries</h3>
 			<p>Give directly to refugees in Venezuela. Over $200K distributed to 10K people!</p>
 			<p>
-				<button>See the impact</button>
-				<button>Give to a beneficiary</button>
+				<!-- <button>See the impact</button> -->
+				<a href="https://impactmarket.com"><button>Give to a beneficiary</button></a>
 			</p>
 		</article>
 		<article class="card">
 			<h3>Save an Urban Forest Near You</h3>
 			<p>Raise funds and support causes that matter.</p>
 			<p>
-				<button>See the impact</button>
-				<button>Save an Urban Forest</button>
+				<!-- <button>See the impact</button> -->
+				<a href="https://www.doni.app"><button>Save an Urban Forest</button></a>
 			</p>
 		</article>
 		<article class="card">
 			<h3>Donate to Phillippine Typhoon Relief</h3>
 			<p>Provide aid directly to those impacted by the devastating typhoion last Nov.</p>
 			<p>
-				<button>Food for a Day</button>
-				<button>Medical Voucher</button>
+				<!-- <button>Food for a Day</button> -->
+				<a href="https://valoraapp.com/donate"><button>Medical Voucher</button></a>
 			</p>
 		</article>
 	</CardStack>
