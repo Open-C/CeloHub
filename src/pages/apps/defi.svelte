@@ -1,8 +1,8 @@
 <!-- routify:options index=4 -->
-<!-- routify:options title="Lend" -->
+<!-- routify:options title="DeFi" -->
 
 <script lang="ts">
 	import ProjectCards from '../../components/ProjectCards.svelte'
 </script>
 
-<ProjectCards filterByCategory="Lend" />
+<ProjectCards filterByCategory="DeFi" />
