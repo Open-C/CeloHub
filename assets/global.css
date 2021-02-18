@@ -87,8 +87,15 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+
+img {
+	transition: 0.3s;
+}
 a:hover img {
-	filter: brightness(1.5);
+	/* filter: saturate(1.05) contrast(0.95) brightness(1.05);
+	filter: saturate(1.5) contrast(0.95) brightness(1.05); */
+	filter: saturate(1.33);
+	opacity: 0.85;
 }
 
 label {
