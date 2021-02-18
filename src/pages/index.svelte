@@ -1,5 +1,5 @@
 <script>
-	import { metatags } from '@roxi/routify'
+	import { metatags, url } from '@roxi/routify'
 	metatags.title = 'CeloHub'
 	metatags.description = 'CeloHub | To Prosperity & Beyond'
 
@@ -16,6 +16,14 @@
 		.two-to-end {
 			grid-column: 2 / -1;
 		}
+	}
+
+	.category-navigation {
+		justify-items: center;
+	}
+	.category-navigation img {
+		width: auto;
+		height: 13em;
 	}
 </style>
 
@@ -56,29 +64,35 @@
 <EcosystemStats />
 
 <div class="grid">
-	<div class="card">
+	<a class="category-navigation card" href={$url('/apps')}>
 		<h3>Mobile Apps</h3>
-	</div>
+		<img src="/images/branding/apps-thumbnail.png" alt="Mobile Apps">
+	</a>
 
-	<div class="card">
+	<a class="category-navigation card" href={$url('/dev-tools')}>
 		<h3>Developer Tools</h3>
-	</div>
+		<img src="/images/branding/devtools-thumbnail.png" alt="Developer Tools">
+	</a>
 
-	<div class="card">
+	<a class="category-navigation card" href={$url('/infrastructure')}>
 		<h3>Infrastructure</h3>
-	</div>
+		<img src="/images/branding/infrastructure-thumbnail.png" alt="Infrastructure">
+	</a>
 
-	<div class="card">
+	<a class="category-navigation card" href={$url('/ecosystem')}>
 		<h3>Ecosystem</h3>
-	</div>
+		<img src="/images/branding/ecosystem-thumbnail.png" alt="Ecosystem">
+	</a>
 
-	<div class="card">
+	<a class="category-navigation card" href={$url('/education')}>
 		<h3>Education</h3>
-	</div>
+		<img src="/images/branding/education-thumbnail.png" alt="Education">
+	</a>
 
-	<div class="card">
+	<a class="category-navigation card" href={$url('/purchase')}>
 		<h3>Purchase</h3>
-	</div>
+		<img src="/images/branding/purchase-thumbnail.png" alt="Purchase">
+	</a>
 </div>
 
 <div class="card full">
