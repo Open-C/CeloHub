@@ -120,7 +120,7 @@
 	<article class="featured-projects-content featured-card card">
 		<div>
 			<h3>Donate to UBI Beneficiaries</h3>
-			<p>Give directly to refugees in Venezuela. Over $200K distributed to 10K people!</p>
+			<p>Give directly to communities in Brazil, Ghana, and more. Over $300K distributed to 10K people!</p>
 			<p>
 				<a href="https://impactmarket.com" target="_blank"><button>Give to a beneficiary</button></a>
 			</p>
