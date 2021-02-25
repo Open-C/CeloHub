@@ -6,18 +6,19 @@
 	let cUSDInCirculation = 0 // 31072411
 
 	;(async () => {
-		for(let i = 0; ; i++){
-			const blockNumberData = await fetch(`https://explorer.celo.org/api?module=block&action=eth_block_number&${i}`).then(r => r.json()).catch(console.error)
+		while(true){
+			const now = Date.now()
+			const blockNumberData = await fetch(`https://explorer.celo.org/api?module=block&action=eth_block_number&_=${now}`).then(r => r.json()).catch(console.error)
 			console.log('blockNumberData', blockNumberData)
 			if(blockNumberData)
 				totalBlocks = Math.max(totalBlocks, Number(blockNumberData.result))
 
-			const totalTransactionsData = await fetch(`https://explorer.celo.org/api?module=stats&action=totaltransactions&${i}`).then(r => r.json()).catch(console.error)
+			const totalTransactionsData = await fetch(`https://explorer.celo.org/api?module=stats&action=totaltransactions&_=${now}`).then(r => r.json()).catch(console.error)
 			console.log('totalTransactionsData', totalTransactionsData)
 			if(totalTransactionsData)
 				totalTransactions = Math.max(totalTransactions, Number(totalTransactionsData.result))
 
-			const cUSDSupplyData = await fetch(`https://explorer.celo.org/api?module=stats&action=tokensupply&contractaddress=0x765de816845861e75a25fca122bb6898b8b1282a&${i}`).then(r => r.json()).catch(console.error)
+			const cUSDSupplyData = await fetch(`https://explorer.celo.org/api?module=stats&action=tokensupply&contractaddress=0x765de816845861e75a25fca122bb6898b8b1282a&_=${now}`).then(r => r.json()).catch(console.error)
 			console.log('cUSDSupplyData', cUSDSupplyData)
 			if(cUSDSupplyData)
 				cUSDInCirculation = Math.max(cUSDInCirculation, Number(cUSDSupplyData.result) / 1e18)
