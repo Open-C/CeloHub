@@ -62,7 +62,7 @@
 	{#if !project.logo && !project.thumbnail}
 		<h3>
 			{#if project.website}
-				<a href={project.website}>{project.name}</a>
+				<a href={project.website} target="_blank">{project.name}</a>
 			{:else}
 				{project.name}
 			{/if}
@@ -71,16 +71,16 @@
 	<footer>
 		<div class="project-links">
 			{#if project.android}
-				<a href={project.android}><img src={icons.android} alt="Android Play Store" /></a>
+				<a href={project.android} target="_blank"><img src={icons.android} alt="Android Play Store" /></a>
 			{/if}
 			{#if project.iOS}
-				<a href={project.iOS}><img src={icons.iOS} alt="iOS App Store" /></a>
+				<a href={project.iOS} target="_blank"><img src={icons.iOS} alt="iOS App Store" /></a>
 			{/if}
 			{#if project.website}
-				<a href={project.website}><img src={icons.website} alt="Website" /></a>
+				<a href={project.website} target="_blank"><img src={icons.website} alt="Website" /></a>
 			{/if}
 			{#if project.github}
-				<a href={project.github}><img src={icons.github} alt="Github" /></a>
+				<a href={project.github} target="_blank"><img src={icons.github} alt="Github" /></a>
 			{/if}
 		</div>
 		{#if showTags && project.tags.length}
