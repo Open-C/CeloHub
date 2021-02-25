@@ -117,7 +117,7 @@
 	</div>
 
 
-	<article class="featured-projects-content featured-card card">
+	<article class="featured-projects-content featured-card card static">
 		<div>
 			<h3>Donate to UBI Beneficiaries</h3>
 			<p>Give directly to communities in Brazil, Ghana, and more. Over $300K distributed to 10K people!</p>
