@@ -3,7 +3,7 @@
 	let totalBlocks = 0 // 4746421
 	let totalTransactions = 0 // 2063418
 	let walletAddresses = 0 // 70994
-	let cUSDInCirculation = 0 // 31072411
+	let cUSDInCirculation = 40000000 // 31072411
 
 	;(async () => {
 		while(true){
@@ -18,10 +18,10 @@
 			if(totalTransactionsData)
 				totalTransactions = Math.max(totalTransactions, Number(totalTransactionsData.result))
 
-			const cUSDSupplyData = await fetch(`https://explorer.celo.org/api?module=stats&action=tokensupply&contractaddress=0x765de816845861e75a25fca122bb6898b8b1282a&_=${now}`).then(r => r.json()).catch(console.error)
-			console.log('cUSDSupplyData', cUSDSupplyData)
-			if(cUSDSupplyData)
-				cUSDInCirculation = Math.max(cUSDInCirculation, Number(cUSDSupplyData.result) / 1e18)
+			// const cUSDSupplyData = await fetch(`https://explorer.celo.org/api?module=stats&action=tokensupply&contractaddress=0x765de816845861e75a25fca122bb6898b8b1282a&_=${now}`).then(r => r.json()).catch(console.error)
+			// console.log('cUSDSupplyData', cUSDSupplyData)
+			// if(cUSDSupplyData)
+			// 	cUSDInCirculation = Math.max(cUSDInCirculation, Number(cUSDSupplyData.result) / 1e18)
 
 			await new Promise(r => setTimeout(r, 3000))
 		}
