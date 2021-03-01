@@ -1,5 +1,5 @@
 <script lang="ts">
-	let tonsCO2Captured = 2088.2 // 2088.2
+	let tonsCO2Captured = 2153.8 // 2153.8
 	let totalBlocks = 0 // 4746421
 	let totalTransactions = 0 // 2063418
 	let walletAddresses = 0 // 70994
