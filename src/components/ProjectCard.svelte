@@ -54,7 +54,13 @@
 <!-- <article class="project card" transition:scale={{duration: 300}}> -->
 <article class="project card static">
 	{#if project.logo && !project.thumbnail}
-		<img class="logo" src={project.logo} alt="{project.name} Logo" />
+		{#if project.website}
+			<a href={project.website} target="_blank">
+				<img class="logo" src={project.logo} alt="{project.name} Logo" />
+			</a>
+		{:else}
+			<img class="logo" src={project.logo} alt="{project.name} Logo" />
+		{/if}
 	{/if}
 	{#if project.thumbnail}
 		<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" />
