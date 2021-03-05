@@ -191,7 +191,7 @@
 
 <div class="education-card card static full">
 	<!-- <img src="/images/branding/learn-video-1.png" alt="Learn Video 1"> -->
-	<iframe src="https://www.youtube.com/embed/ofQD_hhq09g?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0"></iframe>
+	<iframe src="https://www.youtube.com/embed/ofQD_hhq09g?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0" title="Video: What is the Celo Platform?" loading="lazy"></iframe>
 	<div>
 		<h3>What is the Celo Platform?</h3>
 		<p>The Celo platform aims to make financial tools borderless, easy to use, and accessible for anyone with a mobile phone.</p>
@@ -201,7 +201,7 @@
 
 <div class="education-card card static full">
 	<!-- <img src="/images/branding/learn-video-2.png" alt="Learn Video 2"> -->
-	<iframe src="https://www.youtube.com/embed/mkpTmbkRv4A?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0"></iframe>
+	<iframe src="https://www.youtube.com/embed/mkpTmbkRv4A?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0" title="Video: What is Celo?" loading="lazy"></iframe>
 	<div>
 		<h3>What is Celo?</h3>
 		<p>Celo is the core utility, reserve, staking, and governance asset for the Celo platform. From staking, to voting, to arbitrage.</p>
@@ -211,7 +211,7 @@
 
 <div class="education-card card static full">
 	<!-- <img src="/images/branding/learn-video-3.png" alt="Learn Video 3"> -->
-	<iframe src="https://www.youtube.com/embed/n1k1JcjTnp8?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0"></iframe>
+	<iframe src="https://www.youtube.com/embed/n1k1JcjTnp8?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0" title="Video: What can Celo Dollars do?" loading="lazy"></iframe>
 	<div>
 		<h3>What can Celo Dollars do?</h3>
 		<p>Celo Dollars (cUSD) are stablecoins that track the US dollar. Anyone with a mobile phone can send, receive, and store Celo Dollars for free.</p>
