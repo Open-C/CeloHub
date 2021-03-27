@@ -135,9 +135,14 @@
 		justify-content: space-between;
 		flex-wrap: wrap;
 		padding: var(--space-outer);
+		gap: 0.25em 1em;
 
 		background-color: var(--celo-dark);
 		color: var(--celo-light-gray);
+	}
+
+	footer img {
+		vertical-align: -0.25em;
 	}
 
 
@@ -297,9 +302,17 @@
 		</main>
 
 		<footer>
-			<span>Made with <img alt="love" src="/images/branding/heart.png" width="20" style="vertical-align: -0.15em"> by <a href="https://github.com/Open-C" target="_blank">OpenC <img alt="OpenC" src="/images/branding/OpenC-Logo.png" width="20" style="vertical-align: -0.25em"></a></span>
-			<a href="https://github.com/Open-C/celohub" target="_blank">GitHub</a>
-			<span style="overflow: hidden; text-overflow: ellipsis">0xBcaA871742Cc603C297e956DF8d6A398ef975551</span>
+			<p>
+				<strong>CeloHub</strong>
+				<span> • </span>
+				<span>Made with <img alt="love" src="/images/branding/heart.png" width="20" style="vertical-align: -0.15em"> by <a href="https://github.com/Open-C" target="_blank">OpenC <img alt="OpenC" src="/images/branding/OpenC-Logo.png" width="20"></a></span>
+			</p>
+			<p>
+				<a href="https://github.com/Open-C/celohub" target="_blank"><img src="/images/link-icons/GitHub-Logo-Round.png" alt="CeloHub on GitHub" width="20" /> GitHub</a>
+			</p>
+			<p>
+				Donate: <small><a href="#" on:click={e => {navigator.clipboard.writeText(e.target.innerText); window.getSelection().selectAllChildren(e.target)}} style="overflow: hidden; text-overflow: ellipsis">0xBcaA871742Cc603C297e956DF8d6A398ef975551</a></small>
+			</p>
 		</footer>
 	</div>
 </div>

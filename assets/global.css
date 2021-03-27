@@ -77,6 +77,12 @@ h5 {
 	font-size: 1.25em;
 }
 
+strong {
+	font-weight: bold;
+}
+small {
+	font-size: smaller;
+}
 
 
 a {
