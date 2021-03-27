@@ -7,7 +7,7 @@
 	let totalBlocks = 0 // 4746421
 	let totalTransactions = 0 // 2063418
 	let walletAddresses = 0 // 70994
-	let cUSDInCirculation = 40272000 // 31072411
+	let cUSDInCirculation = 42000000
 
 	;(async () => {
 		while(true){
@@ -28,10 +28,10 @@
 			// if(cUSDSupplyData)
 			// 	cUSDInCirculation = Math.max(cUSDInCirculation, Number(cUSDSupplyData.result) / 1e18)
 
-			// const cUSDSupplyData = await fetch(`https://thecelo.com/api/v0.1?method=dashboard&_=${now}`, {mode: 'no-cors'}).then(r => r.json()).catch(console.error)
-			// console.log('cUSDSupplyData', cUSDSupplyData)
-			// if(cUSDSupplyData)
-			// 	cUSDInCirculation = Math.max(cUSDInCirculation, Number(cUSDSupplyData?.dashboard?.[17]))
+			const cUSDSupplyData = await fetch(`https://thecelo.com/api/v0.1?method=dashboard&_=${now}`).then(r => r.json()).catch(console.error)
+			console.log('cUSDSupplyData', cUSDSupplyData)
+			if(cUSDSupplyData)
+				cUSDInCirculation = Math.max(cUSDInCirculation, Number(cUSDSupplyData?.dashboard?.[15]))
 
 
 			// const stableToken = await kit.contracts.getStableToken()
