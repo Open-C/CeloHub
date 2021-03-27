@@ -7,7 +7,7 @@
 	let totalBlocks = 0 // 4746421
 	let totalTransactions = 0 // 2063418
 	let walletAddresses = 0 // 70994
-	let cUSDInCirculation = 42000000
+	let cUSDInCirculation = 0 // 42000000
 
 	;(async () => {
 		while(true){
