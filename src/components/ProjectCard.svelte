@@ -63,7 +63,13 @@
 		{/if}
 	{/if}
 	{#if project.thumbnail}
-		<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" />
+		{#if project.website}
+			<a href={project.website} target="_blank">
+				<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" />
+			</a>
+		{:else}
+			<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" />
+		{/if}
 	{/if}
 	{#if !project.logo && !project.thumbnail}
 		<h3>
