@@ -297,7 +297,7 @@
 		</main>
 
 		<footer>
-			<span>Made with <img alt="love" src="/images/branding/heart.png" width="20" style="vertical-align: -0.15em"> by OpenC</span>
+			<span>Made with <img alt="love" src="/images/branding/heart.png" width="20" style="vertical-align: -0.15em"> by <a href="https://github.com/Open-C" target="_blank">OpenC <img alt="OpenC" src="/images/branding/OpenC-Logo.png" width="20" style="vertical-align: -0.25em"></a></span>
 			<a href="https://github.com/Open-C/celohub" target="_blank">GitHub</a>
 			<span style="overflow: hidden; text-overflow: ellipsis">0xBcaA871742Cc603C297e956DF8d6A398ef975551</span>
 		</footer>
