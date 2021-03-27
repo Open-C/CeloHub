@@ -110,6 +110,9 @@
 		font-size: 1.5em;
 		display: block;
 	}
+	.stat a:not(:hover) {
+		color: inherit;
+	}
 </style>
 
 <div id="ecosystem-stats" class="card static full">
@@ -149,7 +152,7 @@
 		<img src="/images/branding/carbon-offset.png" alt="carbon offset">
 		<div>
 			<TweenedNumber bind:number={tonsCO2Captured} maxDecimals=1 />
-			<span>tons of CO<sub>₂</sub> offset</span>
+			<span><a href="https://www.wren.co/profile/celo" target="_blank">tons of CO<sub>₂</sub> offset</a></span>
 		</div>
 	</div>
 </div>
