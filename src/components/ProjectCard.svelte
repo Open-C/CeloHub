@@ -10,6 +10,8 @@
 		website: '/images/link-icons/Web-Logo-Round@3x.png'
 	}
 
+	$: defaultLink = project.website || project.github
+
 	export let project: Project
 
 	// Display options
@@ -55,7 +57,7 @@
 <article class="project card static">
 	{#if project.logo && !project.thumbnail}
 		{#if project.website}
-			<a href={project.website} target="_blank">
+			<a href={defaultLink} target="_blank">
 				<img class="logo" src={project.logo} alt="{project.name} Logo" />
 			</a>
 		{:else}
@@ -64,7 +66,7 @@
 	{/if}
 	{#if project.thumbnail}
 		{#if project.website}
-			<a href={project.website} target="_blank">
+			<a href={defaultLink} target="_blank">
 				<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" />
 			</a>
 		{:else}
@@ -73,8 +75,8 @@
 	{/if}
 	{#if !project.logo && !project.thumbnail}
 		<h3>
-			{#if project.website}
-				<a href={project.website} target="_blank">{project.name}</a>
+			{#if defaultLink}
+				<a href={defaultLink} target="_blank">{project.name}</a>
 			{:else}
 				{project.name}
 			{/if}
