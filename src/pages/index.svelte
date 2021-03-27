@@ -1,7 +1,7 @@
 <script>
 	import { metatags, url } from '@roxi/routify'
-	metatags.title = 'CeloHub'
-	metatags.description = 'CeloHub | To Prosperity & Beyond'
+	metatags.title = 'CeloHub | To Prosperity & Beyond'
+	metatags.description = 'Your portal to the Celo ecosystem! Find mobile apps, developer tools, educational resources and more.'
 
 
 	import CardStack from '../components/CardStack.svelte'
