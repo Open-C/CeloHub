@@ -1,4 +1,4 @@
-<!-- routify:options index=2 -->
+<!-- routify:options index=4 -->
 <!-- routify:options title="Earn" -->
 
 <script lang="ts">
