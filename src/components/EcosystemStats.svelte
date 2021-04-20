@@ -113,6 +113,19 @@
 	.stat a:not(:hover) {
 		color: inherit;
 	}
+
+	#ecosystem-stats :global(.tweened-number) {
+		font-family: var(--heading-font);
+		transform-origin: left center;
+		animation: Blink 1000ms;
+	}
+
+	@keyframes Blink {
+		25% {
+			color: var(--celo-gold);
+			transform: scale(1.05);
+		}
+	}
 </style>
 
 <div id="ecosystem-stats" class="card static full">

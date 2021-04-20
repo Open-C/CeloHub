@@ -19,19 +19,4 @@
 	$: tweenedNumber.set(Number(number || 0))
 </script>
 
-<style>
-	.tweened-number {
-		font-family: var(--heading-font);
-		transform-origin: left center;
-		animation: Blink 1000ms;
-	}
-
-	@keyframes Blink {
-		25% {
-			color: var(--celo-gold);
-			transform: scale(1.05);
-		}
-	}
-</style>
-
 {#key number}<span class="tweened-number">{formatNumber($tweenedNumber)}</span>{/key}
