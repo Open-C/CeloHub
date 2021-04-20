@@ -52,6 +52,12 @@ import { fly } from 'svelte/transition';
 		padding-bottom: calc(0.5 * var(--space-inner));
 		margin-bottom: calc(-0.5 * var(--space-inner));
 	}
+
+	@media (max-width: 35rem) {
+		.project-count {
+			display: none;
+		}
+	}
 </style>
 
 <section class="column">
