@@ -54,9 +54,12 @@
 
 <section class="column">
 	<header class="sticky bar">
-		<slot>
-			<h3><Breadcrumb /></h3>
-		</slot>
+		<div class="bar">
+			<slot>
+				<h3><Breadcrumb /></h3>
+			</slot>
+			{liveProjects.length} projects
+		</div>
 		<label>
 			<input type="checkbox" bind:checked={showTags} />
 			<span>Show Tags</span>
