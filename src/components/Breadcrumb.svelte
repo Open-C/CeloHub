@@ -23,7 +23,7 @@
 </style>
 
 {#if currentPage}
-	<span class="breadcrumb row">
+	<span class="breadcrumb bar">
 		{#each ancestors as ancestorPage}
 			<a href={$url(ancestorPage.path)}>{capitalize(ancestorPage.title)}</a>
 			<span>›</span>
