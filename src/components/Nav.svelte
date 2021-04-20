@@ -90,7 +90,7 @@
 
 <nav>
 	<ul>
-		{#each console.log($layout.children) || $layout.children as { path, title, children }}
+		{#each $layout.children as { path, title, children }}
 			<li tabindex="0">
 				<div class="row">
 					<a class:active={$isActive(path)} href={$url(path)}>{capitalize(title)}</a>
