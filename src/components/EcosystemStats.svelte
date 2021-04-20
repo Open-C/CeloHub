@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onDestroy } from 'svelte'
+
 	// import { newKit } from '@celo/contractkit'
 
 	// const kit = newKit('https://forno.celo.org')
@@ -9,8 +11,11 @@
 	let walletAddresses = 0 // 70994
 	let cUSDInCirculation = 0 // 42000000
 
+	let isMounted = true
+	onDestroy(() => isMounted = false)
+
 	;(async () => {
-		while(true){
+		while(isMounted){
 			const now = Date.now()
 			const blockNumberData = await fetch(`https://explorer.celo.org/api?module=block&action=eth_block_number&_=${now}`).then(r => r.json()).catch(console.error)
 			console.log('blockNumberData', blockNumberData)
