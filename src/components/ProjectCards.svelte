@@ -73,7 +73,7 @@ import { fly } from 'svelte/transition';
 	</header>
 
 	<div class="grid" out:fly={{duration: 200, x: 20, opacity: 0}} in:fly={{delay: 200, duration: 200, x: -20, opacity: 0}}>
-		{#each liveProjects as project}
+		{#each liveProjects as project (project.name)}
 			<ProjectCard {project} bind:showTags={showTags} />
 			<!-- <ProjectCard {project} bind:showAllTags={showAllTags} /> -->
 		{:else}
@@ -96,7 +96,7 @@ import { fly } from 'svelte/transition';
 			</label> -->
 		</header>
 		<div class="grid small" out:fly={{duration: 200, x: 20, opacity: 0}} in:fly={{delay: 200, duration: 200, x: -20, opacity: 0}}>
-			{#each comingSoonProjects as project}
+			{#each comingSoonProjects as project (project.name)}
 				<ProjectCard {project} bind:showTags={showTags} />
 				<!-- <ProjectCard {project} bind:showAllTags={showAllTags} /> -->
 			{/each}
