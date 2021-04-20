@@ -72,7 +72,12 @@
 	}
 	.featured-card img {
 		width: auto;
-		height: 10em;
+		height: 9em;
+	}
+	@media (max-width: 28rem) {
+		.featured-card img {
+			display: none;
+		}
 	}
 	/* @media (max-width: 50rem) {
 		.featured-card {
