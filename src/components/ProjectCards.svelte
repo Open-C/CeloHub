@@ -1,4 +1,6 @@
 <script lang="ts">
+import { fly } from 'svelte/transition';
+
 	import { Project, Tag, projects as allProjects } from '../data/projects'
 
 	export let filterByCategorySection: Tag | undefined
@@ -70,7 +72,7 @@
 		</label> -->
 	</header>
 
-	<div class="grid">
+	<div class="grid" out:fly={{duration: 200, x: 20, opacity: 0}} in:fly={{delay: 200, duration: 200, x: -20, opacity: 0}}>
 		{#each liveProjects as project}
 			<ProjectCard {project} bind:showTags={showTags} />
 			<!-- <ProjectCard {project} bind:showAllTags={showAllTags} /> -->
@@ -93,7 +95,7 @@
 				<span>Show All Tags</span>
 			</label> -->
 		</header>
-		<div class="grid small">
+		<div class="grid small" out:fly={{duration: 200, x: 20, opacity: 0}} in:fly={{delay: 200, duration: 200, x: -20, opacity: 0}}>
 			{#each comingSoonProjects as project}
 				<ProjectCard {project} bind:showTags={showTags} />
 				<!-- <ProjectCard {project} bind:showAllTags={showAllTags} /> -->
