@@ -1,4 +1,4 @@
-<!-- routify:options index=1 -->
+<!-- routify:options index=2 -->
 <!-- routify:options title="DeFi" -->
 
 <script lang="ts">
