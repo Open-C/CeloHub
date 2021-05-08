@@ -1,4 +1,4 @@
-<!-- routify:options index=1 -->
+<!-- routify:options index=4 -->
 <!-- routify:options title="Wallets" -->
 
 <script lang="ts">
