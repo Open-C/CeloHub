@@ -310,9 +310,6 @@
 			<p>
 				<a href="https://github.com/Open-C/celohub" target="_blank"><img src="/images/link-icons/GitHub-Logo-Round.png" alt="CeloHub on GitHub" width="20" /> GitHub</a>
 			</p>
-			<p>
-				Donate: <small><a href="#" on:click={e => {navigator.clipboard.writeText(e.target.innerText); window.getSelection().selectAllChildren(e.target)}} style="overflow: hidden; text-overflow: ellipsis">0xBcaA871742Cc603C297e956DF8d6A398ef975551</a></small>
-			</p>
 		</footer>
 	</div>
 </div>
