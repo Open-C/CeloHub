@@ -77,7 +77,7 @@
 			<slot>
 				<h3><Breadcrumb /></h3>
 			</slot>
-			{liveProjects.length} projects
+			{liveProjects.length} project{liveProjects.length === 1 ? '' : 's'}
 		</div>
 		<label>
 			<input type="checkbox" bind:checked={showTags} />
