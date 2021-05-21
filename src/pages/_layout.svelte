@@ -96,6 +96,7 @@
 		min-width: 16em;
 		min-width: 35vw;
 		text-indent: 2em;
+		background-color: rgba(255, 255, 255, 0.75);
 		background-repeat: no-repeat;
 		background-position: 1em center;
 		background-size: 1.2em;
@@ -245,8 +246,9 @@
 		}
 		input[type="search"] {
 			width: calc(100vw - var(--sidebar-button-width) - var(--space-outer) * 2 - var(--space-inner));
-			transition: transform 0.3s;
 			justify-self: end;
+			transition: transform 0.3s;
+			background-color: rgba(255, 255, 255, 1);
 		}
 		input[type="search"]:not(:focus):not(.is-searching) {
 			transform: translateX(calc(100% - var(--sidebar-button-width) + var(--space-outer)));
