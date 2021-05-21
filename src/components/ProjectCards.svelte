@@ -64,7 +64,15 @@
 		margin-bottom: calc(-0.5 * var(--space-inner));
 	}
 
-	@media (max-width: 35rem) {
+	header {
+		white-space: nowrap;
+	}
+
+	.project-count {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	@media (max-width: 28rem) {
 		.project-count {
 			display: none;
 		}
@@ -78,7 +86,7 @@
 				<h3><Breadcrumb /></h3>
 			</slot>
 			{#if liveProjects.length}
-				{liveProjects.length} project{liveProjects.length === 1 ? '' : 's'}
+				<span class="project-count">{liveProjects.length} project{liveProjects.length === 1 ? '' : 's'}</span>
 			{/if}
 		</div>
 		<label>
