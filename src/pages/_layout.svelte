@@ -1,8 +1,14 @@
 <!-- routify:options preload="proximity" -->
 
 <script>
+	import { setContext } from 'svelte'
+	import { writable } from 'svelte/store'
+	
+	const searchQuery = writable('')
+	setContext('searchQuery', searchQuery)
+	
+	
 	import { beforeUrlChange, isActive, url, layout } from '@roxi/routify'
-	import { TabsTransition } from '@roxi/routify/decorators'
 
 	let sidebarIsOpen = false
 
@@ -13,7 +19,10 @@
 		return true
 	})
 
+
 	import Nav from '../components/Nav.svelte'
+	import { fly } from 'svelte/transition'
+	import { TabsTransition } from '@roxi/routify/decorators'
 </script>
 
 <style>
@@ -83,8 +92,26 @@
 	}
 
 
+	.search-form {
+		z-index: 1;
+	}
+	.search-form label {
+		display: grid;
+		grid-template-areas: 'stack';
+	}
+	.search-form label > * {
+		grid-area: stack;
+	}
+	.search-icon {
+		width: var(--sidebar-button-width);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+	}
 	input[type="search"] {
-		min-width: 14em;
+		min-width: 16em;
+		text-indent: 2em;
 	}
 
 
@@ -229,17 +256,20 @@
 		}
 		.search-form {
 			justify-self: end;
-		}
-		input[type="search"] {
 			/* position: absolute;
 			right: 0; */
-			transition: transform 0.3s;
 			min-width: 50vw;
-			padding-left: 1em;
 			z-index: 1;
+			width: calc(100vw - var(--sidebar-button-width) - var(--space-outer) * 2 - var(--space-inner));
 		}
-		input[type="search"]:not(:focus) {
+		.search-form {
+			transition: transform 0.3s;
+		}
+		.search-form:not(:focus-within):not(.is-searching) {
 			transform: translateX(calc(100% - var(--sidebar-button-width) + var(--space-outer)));
+		}
+		input[type="search"] {
+			padding-left: 1em;
 		}
 
 		#logo {
@@ -291,9 +321,19 @@
 				</span>
 				<p class="tagline">To Prosperity & Beyond</p>
 			</a>
-			<form class="search-form">
-				<!-- <input type="search" placeholder="🔍 Search CeloHub..." /> -->
-			</form>
+
+			{#if $url(), globalThis.location.pathname !== '/'}
+				<form class="search-form" class:is-searching={$searchQuery.length} transition:fly={{duration: 300, x: 10, opacity: 0}} on:submit|preventDefault={() => {}}>
+					<label>
+						<span class="search-icon">
+							<svg viewBox="0 0 20 20" fill="currentColor" height="1.25em" width="1.25em">
+								<path d="M19.023 16.977a35.13 35.13 0 01-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0016 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" />
+							</svg>
+						</span>
+						<input type="search" bind:value={$searchQuery} placeholder="Search Projects..." />
+					</label>
+				</form>
+			{/if}
 		</header>
 
 		<main>

@@ -19,7 +19,6 @@
 	export let showAllTags = false
 
 	import Tags from './Tags.svelte'
-	import { scale } from 'svelte/transition'
 </script>
 
 <style>
@@ -53,7 +52,6 @@
 	}
 </style>
 
-<!-- <article class="project card" transition:scale={{duration: 300}}> -->
 <article class="project card static">
 	{#if project.logo && !project.thumbnail}
 		{#if project.website}

@@ -5,16 +5,26 @@
 	export let filterByCategorySection: Tag | undefined
 	export let filterByCategory: Tag | undefined
 	export let filterByTags: Tag[]
-
-	export let searchQuery = ''
+	
+	import { getContext } from 'svelte'
+	const searchQuery = getContext<SvelteStore<string>>('searchQuery')
 
 	let projects: Project[]
 	$: if(allProjects){
-		const query = searchQuery.trim().toLowerCase()
+		const query = $searchQuery?.trim().toLowerCase() ?? ''
 		if(query || filterByCategorySection || filterByCategory || filterByTags?.length)
 			projects = allProjects.filter(project => Boolean(
 				// Search query
-				(!query || project.name.toLowerCase().includes(query) || project.description.toLowerCase().includes(query)) &&
+				(!query || [
+					project.name,
+					project.description,
+					project.tags,
+					// project.website && new URL(project.website).host,
+					// project.github && new URL(project.github).host,
+					// project.android && new URL(project.android).host,
+					// project.iOS && new URL(project.iOS).host
+				].join('\n').match(new RegExp(query, 'i'))) &&
+				// (!query || project.name?.toLowerCase().includes(query) || project.description?.toLowerCase().includes(query) || project.tags.some(tag => tag.includes(query))) &&
 				// Category section filter
 				(!filterByCategorySection || project.section === filterByCategorySection) &&
 				// Category filter
@@ -39,6 +49,7 @@
 	import Breadcrumb from './Breadcrumb.svelte'
 	import ProjectCard from './ProjectCard.svelte'
 	import { fly } from 'svelte/transition'
+	import { flip } from 'svelte/animate'
 </script>
 
 <style>
@@ -78,17 +89,34 @@
 		</label> -->
 	</header>
 
-	<div class="grid" out:fly={{duration: 200, x: 20, opacity: 0}} in:fly={{delay: 200, duration: 200, x: -20, opacity: 0}}>
-		{#each liveProjects as project (project.name)}
-			<ProjectCard {project} bind:showTags={showTags} />
-			<!-- <ProjectCard {project} bind:showAllTags={showAllTags} /> -->
+	{#if !liveProjects.length && !comingSoonProjects.length}
+		{#if $searchQuery}
+			We didn't find any {filterByCategory || filterByCategorySection} projects matching "{$searchQuery}".
 		{:else}
-			We didn't find any projects here.
-		{/each}
+			We didn't find any {filterByCategory || filterByCategorySection} projects here.
+		{/if}
+	{/if}
+
+	<div class="grid" out:fly={{duration: 200, x: 20, opacity: 0}} in:fly={{delay: 200, duration: 200, x: -20, opacity: 0}}>
+		{#if liveProjects.length < 25}
+			{#each liveProjects as project (project.name)}
+				<div animate:flip={{duration: 200}} transition:fly|local={{duration: 200, y: 20, opacity: 0}}>
+					<ProjectCard {project} bind:showTags={showTags} />
+					<!-- <ProjectCard {project} bind:showAllTags={showAllTags} /> -->
+				</div>
+			{/each}
+		{:else}
+			{#each liveProjects as project (project.name)}
+				<ProjectCard {project} bind:showTags={showTags} />
+				<!-- <ProjectCard {project} bind:showAllTags={showAllTags} /> -->
+			{/each}
+		{/if}
 	</div>
 </section>
-{#if comingSoonProjects?.length}
+{#if liveProjects.length && comingSoonProjects.length}
 	<hr>
+{/if}
+{#if comingSoonProjects?.length}
 	<section>
 		<header class="sticky bar">
 			<h3>Coming Soon</h3>
@@ -102,10 +130,19 @@
 			</label> -->
 		</header>
 		<div class="grid small" out:fly={{duration: 200, x: 20, opacity: 0}} in:fly={{delay: 200, duration: 200, x: -20, opacity: 0}}>
-			{#each comingSoonProjects as project (project.name)}
-				<ProjectCard {project} bind:showTags={showTags} />
-				<!-- <ProjectCard {project} bind:showAllTags={showAllTags} /> -->
-			{/each}
+			{#if comingSoonProjects.length < 25}
+				{#each comingSoonProjects as project (project.name)}
+					<div animate:flip={{duration: 200}} transition:fly|local={{duration: 200, y: 20, opacity: 0}}>
+						<ProjectCard {project} bind:showTags={showTags} />
+						<!-- <ProjectCard {project} bind:showAllTags={showAllTags} /> -->
+					</div>
+				{/each}
+			{:else}
+				{#each comingSoonProjects as project (project.name)}
+					<ProjectCard {project} bind:showTags={showTags} />
+					<!-- <ProjectCard {project} bind:showAllTags={showAllTags} /> -->
+				{/each}
+			{/if}
 		</div>
 	</section>
 {/if}
