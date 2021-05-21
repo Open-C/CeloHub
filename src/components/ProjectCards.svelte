@@ -1,5 +1,4 @@
 <script lang="ts">
-import { fly } from 'svelte/transition';
 
 	import { Project, Tag, projects as allProjects } from '../data/projects'
 
@@ -39,6 +38,7 @@ import { fly } from 'svelte/transition';
 
 	import Breadcrumb from './Breadcrumb.svelte'
 	import ProjectCard from './ProjectCard.svelte'
+	import { fly } from 'svelte/transition'
 </script>
 
 <style>
