@@ -5,7 +5,7 @@
 
 	// const kit = newKit('https://forno.celo.org')
 
-	let tonsCO2Captured = 2219.5 // 2153.8
+	let tonsCO2Captured = 2285.2
 	let totalBlocks = 0 // 4746421
 	let totalTransactions = 0 // 2063418
 	let walletAddresses = 0 // 70994
