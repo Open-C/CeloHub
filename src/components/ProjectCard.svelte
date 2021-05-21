@@ -52,7 +52,7 @@
 	}
 </style>
 
-<article class="project card static">
+<article class="project card static" title="{project.name}{defaultLink ? `\n${defaultLink}` : ''}">
 	{#if project.logo && !project.thumbnail}
 		{#if project.website}
 			<a href={defaultLink} target="_blank">
