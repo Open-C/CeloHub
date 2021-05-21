@@ -23,7 +23,7 @@
 					// project.github && new URL(project.github).host,
 					// project.android && new URL(project.android).host,
 					// project.iOS && new URL(project.iOS).host
-				].join('\n').match(new RegExp(query, 'i'))) &&
+				].join('\n').toLowerCase().includes(query)) && // .match(new RegExp(query, 'i'))) &&
 				// (!query || project.name?.toLowerCase().includes(query) || project.description?.toLowerCase().includes(query) || project.tags.some(tag => tag.includes(query))) &&
 				// Category section filter
 				(!filterByCategorySection || project.section === filterByCategorySection) &&
