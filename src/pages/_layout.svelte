@@ -94,7 +94,7 @@
 
 	input[type="search"] {
 		min-width: 16em;
-		min-width: 35vw;
+		min-width: 30vw;
 		text-indent: 2em;
 		background-color: rgba(255, 255, 255, 0.75);
 		background-repeat: no-repeat;
