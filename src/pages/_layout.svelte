@@ -308,7 +308,7 @@
 				<span>Made with <img alt="love" src="/images/branding/heart.png" width="20" style="vertical-align: -0.15em"> by <a href="https://github.com/Open-C" target="_blank">OpenC <img alt="OpenC" src="/images/branding/OpenC-Logo.png" width="20"></a></span>
 			</p>
 			<p>
-				<a href="https://github.com/Open-C/celohub" target="_blank"><img src="/images/link-icons/GitHub-Logo-Round.png" alt="CeloHub on GitHub" width="20" /> GitHub</a>
+				<a href="https://github.com/Open-C/CeloHub" target="_blank"><img src="/images/link-icons/GitHub-Logo-Round.png" alt="CeloHub on GitHub" width="20" /> GitHub</a>
 			</p>
 		</footer>
 	</div>
