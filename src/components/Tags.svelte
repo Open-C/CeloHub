@@ -73,9 +73,9 @@
 
 <div class="tags" class:show-first-few={!showAllTags}>
 	{#each showAllTags ? tags : tags.slice(0, showCount) as tag}
-		<span class="tag" style="--tag-color: {getTagColor(tag)}" transition:scale={{duration: 300}}>{tag}</span>
+		<span class="tag" style="--tag-color: {getTagColor(tag)}">{tag}</span><!-- transition:scale={{duration: 300}} -->
 	{/each}
 	{#if tags.length > 3 && !showAllTags}
-		<span class="tag other-count" transition:scale={{duration: 300}}>+{tags.length - showCount}</span>
+		<span class="tag other-count">+{tags.length - showCount}</span><!-- transition:scale={{duration: 300}} -->
 	{/if}
 </div>
