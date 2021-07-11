@@ -16,6 +16,7 @@
       "dev": "run-p routify nollup",
       "dev:ssr": "run-p routify rollup",
       "build": "run-s build:*",
+      "build:images": "npm run optimize-images",
       "build:app": "routify -b && rollup -c",
       "build:static": "spank",
       "serve": "spassr --ssr",
