@@ -56,19 +56,19 @@
 	{#if project.logo && !project.thumbnail}
 		{#if project.website}
 			<a href={defaultLink} target="_blank">
-				<img class="logo" src={project.logo} alt="{project.name} Logo" />
+				<img class="logo" src={project.logo} alt="{project.name} Logo" loading="lazy" />
 			</a>
 		{:else}
-			<img class="logo" src={project.logo} alt="{project.name} Logo" />
+			<img class="logo" src={project.logo} alt="{project.name} Logo" loading="lazy" />
 		{/if}
 	{/if}
 	{#if project.thumbnail}
 		{#if project.website}
 			<a href={defaultLink} target="_blank">
-				<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" />
+				<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" loading="lazy" />
 			</a>
 		{:else}
-			<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" />
+			<img class="thumbnail" src={project.thumbnail} alt="{project.name} Thumbnail" loading="lazy" />
 		{/if}
 	{/if}
 	{#if !project.logo && !project.thumbnail}
