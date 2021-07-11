@@ -22,7 +22,8 @@
       "rollup": "rollup -cw",
       "nollup": "nollup -c",
       "routify": "routify",
-      "validate": "svelte-check"
+      "validate": "svelte-check",
+      "optimize-images": "npm install -g sharp-cli; npx expo-optimize -i \"assets/images/**/*\" -s"
    },
    "devDependencies": {
       "@rollup/plugin-commonjs": "^19.0.0",
