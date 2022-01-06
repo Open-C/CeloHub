@@ -27,33 +27,33 @@
       "optimize-images": "npm install -g sharp-cli; npx expo-optimize -i \"assets/images/**/*\" -s"
    },
    "devDependencies": {
-      "@rollup/plugin-commonjs": "^19.0.0",
-      "@rollup/plugin-node-resolve": "^13.0.0",
-      "@rollup/plugin-typescript": "^8.2.1",
-      "@roxi/routify": "^2.18.0",
+      "@rollup/plugin-commonjs": "^19.0.2",
+      "@rollup/plugin-node-resolve": "^13.1.3",
+      "@rollup/plugin-typescript": "^8.3.0",
+      "@roxi/routify": "^2.18.4",
       "@tsconfig/svelte": "^2.0.1",
-      "autoprefixer": "^10.3.0",
+      "autoprefixer": "^10.4.1",
       "cross-env": "^7.0.3",
       "fs-extra": "^10.0.0",
       "nollup": "^0.17.0",
       "npm-run-all": "^4.1.5",
-      "postcss": "^8.3.5",
+      "postcss": "^8.4.5",
       "postcss-import": "^14.0.2",
-      "rollup": "^2.53.0",
+      "rollup": "^2.63.0",
       "rollup-plugin-hot": "^0.1.1",
       "rollup-plugin-livereload": "^2.0.5",
       "rollup-plugin-svelte": "^7.1.0",
       "rollup-plugin-svelte-hot": "^0.13.0",
       "rollup-plugin-terser": "^7.0.2",
-      "rollup-plugin-workbox": "^6.1.1",
-      "spank": "^1.8.0",
+      "rollup-plugin-workbox": "^6.2.0",
+      "spank": "^1.9.0",
       "spassr": "^2.6.0",
-      "svelte": "^3.38.3",
-      "svelte-check": "^2.2.2",
-      "svelte-preprocess": "^4.7.4",
+      "svelte": "^3.44.3",
+      "svelte-check": "^2.2.11",
+      "svelte-preprocess": "^4.10.1",
       "tossr": "^1.4.2",
-      "tslib": "^2.3.0",
-      "typescript": "^4.3.5"
+      "tslib": "^2.3.1",
+      "typescript": "^4.5.4"
    },
    "browsers": "last 4 version",
    "routify": {
@@ -65,5 +65,7 @@
          "/example/modal/basic/4"
       ]
    },
-   "engines" : { "node" : ">=16.0.0" }
+   "engines": {
+      "node": ">=16.0.0"
+   }
 }
